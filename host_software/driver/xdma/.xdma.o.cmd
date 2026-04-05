@@ -1,0 +1,1 @@
+cmd_/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/xdma.o := ld -m elf_x86_64   -r -o /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/xdma.o @/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/xdma.mod

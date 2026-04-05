@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               128M
+Start Address      0x00000000
+End Address        0x07FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x01002000    0x01EBE4F7    Apr  5 15:44:02 2026    /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit

@@ -1,0 +1,555 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 04:59:54 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 36242
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Apr 04 21:41:15 HKT 2026
+Time zone: 	Hong Kong Standard Time (Asia/Hong_Kong)
+
+OS: Rocky Linux release 9.5 (Blue Onyx)
+OS Version: 5.14.0-427.42.1.el9_4.x86_64
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: localhost:11.0
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9
+Java executable: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	root
+User home directory: /root
+User working directory: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: /root/.Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: /root/.Xilinx/Vivado/2022.2/
+Vivado layouts directory: /root/.Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	/opt/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.log
+Vivado journal file: 	/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-36242-hk-office-srv02
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_BASEROOT: /opt/Xilinx/Vivado
+RDI_BINROOT: /opt/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: /opt/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: /opt/Xilinx/Vivado/2022.2/lib/lnx64.o/Default:/opt/Xilinx/Vivado/2022.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/vivado
+RDI_TPS_ROOT: /opt/Xilinx/Vivado/2022.2/tps/lnx64
+RDI_USE_JDK11: True
+XILINX: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2022.2
+XILINX_VITIS: 
+XILINX_VIVADO: /opt/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2022.2
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,851 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 94 MB (+95762kb) [00:00:06]
+// [Engine Memory]: 1,847 MB (+1785625kb) [00:00:06]
+// WARNING: HEventQueue.dispatchEvent() is taking  1133 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,865 MB. GUI used memory: 58 MB. Current time: 4/4/26, 9:41:16 PM HKT
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Older Project Version"); // av
+// Elapsed time: 10 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// WARNING: HEventQueue.dispatchEvent() is taking  1048 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,873 MB. GUI used memory: 60 MB. Current time: 4/4/26, 9:42:02 PM HKT
+setFileChooser("/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.xpr");
+// WARNING: HEventQueue.dispatchEvent() is taking  1539 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 17 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Opening Vivado Project: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.xpr. Version: Vivado v2019.1 
+// WARNING: HEventQueue.dispatchEvent() is taking  1187 ms.
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+dismissDialog("Older Project Version"); // av
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 99 MB (+207kb) [00:01:20]
+// [Engine Memory]: 1,952 MB (+12862kb) [00:01:20]
+// Tcl Message: open_project /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'E:/XilinxProjects/PCIE_XDMA/netfpga_pcie_x1_xdma_bram' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2022.2/data/ip'. 
+// Tcl Message: INFO: [Project 1-230] Project 'pcie_xdma_test.xpr' upgraded for this version of Vivado. 
+//  *** Exceptions that should be ignored by HSystem.debug () - swept under the rug. *** 
+/*
+java.lang.NullPointerException
+*/
+// HMemoryUtils.trashcanNow. Engine heap size: 1,990 MB. GUI used memory: 62 MB. Current time: 4/4/26, 9:42:27 PM HKT
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1246 ms.
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1208 ms.
+// Tcl Command: 'upgrade_project -migrate_output_products'
+// Project name: pcie_xdma_test; location: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram; part: xc7vx690tffg1761-3
+// Elapsed time: 10 seconds
+selectButton("OptionPane.button", "Yes"); // JButton
+// Tcl Message: upgrade_project -migrate_output_products 
+// Tcl Message: update_compile_order -fileset sources_1 
+// WARNING: HEventQueue.dispatchEvent() is taking  1167 ms.
+// Elapsed time: 12 seconds
+selectButton(PAResourceQtoS.ReportIPStatusInfoDialog_REPORT_IP_STATUS, "Report IP Status"); // a
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+dismissDialog("Project Upgraded"); // aa
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv)]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci)]", 2); // D
+// WARNING: HEventQueue.dispatchEvent() is taking  1039 ms.
+// Elapsed time: 13 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Show IP Hierarchy"); // u
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci)]", 2, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_UPGRADE_IP, "Upgrade IP..."); // ao
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: LOAD_FEATURE
+// WARNING: HEventQueue.dispatchEvent() is taking  1308 ms.
+// Tcl Message: upgrade_ip -srcset xdma_0 -vlnv xilinx.com:ip:xdma:4.1 [get_ips  xdma_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'xdma_0' 
+// Tcl Message: INFO: [Project 1-386] Moving file '/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci' from fileset 'xdma_0' to fileset 'sources_1'. 
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// [GUI Memory]: 115 MB (+12032kb) [00:02:20]
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded xdma_0 (DMA/Bridge Subsystem for PCI Express 4.1) from revision 3 to revision 20 INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'xdma_0'... 
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips xdma_0] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1192 ms.
+dismissDialog("Upgrade IP"); // bq
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,059 MB. GUI used memory: 65 MB. Current time: 4/4/26, 9:43:27 PM HKT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1332 ms. Increasing delay to 3996 ms.
+// [Engine Memory]: 2,075 MB (+26843kb) [00:02:21]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 17 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci)]", 2); // D
+// WARNING: HEventQueue.dispatchEvent() is taking  1039 ms.
+// Elapsed time: 13 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Show IP Hierarchy"); // u
+// [GUI Memory]: 121 MB (+28kb) [00:03:00]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_blk_mem_64_noreg_be (xdma_v4_1_20_blk_mem_64_noreg_be.xci)]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_0_pcie3_ip (xdma_0_pcie3_ip.xci)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_0_pcie3_ip (xdma_0_pcie3_ip.xci)]", 3, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+// Elapsed time: 12 seconds
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, "Upgrade IP"); // p.d
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 7, true); // D - Node
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie3_ip ; true ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (IP revision change) ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (IP revision change) ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (IP revision change) ; Virtex-7 FPGA Gen3 Integrated Block for PCI Express ; 4.3 (Rev. 4) ; 4.3 (Rev. 12) ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (IP revision change) ; xc7vx690tffg1761-3", 1, "xdma_0_pcie3_ip", 0, false); // y
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_v4_1_3_blk_mem_64_noreg_be ; true ; xdma_v4_1_3_blk_mem_64_noreg_be [Block Memory Generator] (IP revision change) ; xdma_v4_1_3_blk_mem_64_noreg_be [Block Memory Generator] (IP revision change) ; xdma_v4_1_3_blk_mem_64_noreg_be [Block Memory Generator] (IP revision change) ; Block Memory Generator ; 8.4 (Rev. 3) ; 8.4 (Rev. 5) ; xdma_v4_1_3_blk_mem_64_noreg_be [Block Memory Generator] (IP revision change) ; xc7vx690tffg1761-3", 2, "xdma_v4_1_3_blk_mem_64_noreg_be", 0, false); // y
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_v4_1_3_blk_mem_64_reg_be ; true ; xdma_v4_1_3_blk_mem_64_reg_be [Block Memory Generator] (IP revision change) ; xdma_v4_1_3_blk_mem_64_reg_be [Block Memory Generator] (IP revision change) ; xdma_v4_1_3_blk_mem_64_reg_be [Block Memory Generator] (IP revision change) ; Block Memory Generator ; 8.4 (Rev. 3) ; 8.4 (Rev. 5) ; xdma_v4_1_3_blk_mem_64_reg_be [Block Memory Generator] (IP revision change) ; xc7vx690tffg1761-3", 3, "xdma_v4_1_3_blk_mem_64_reg_be", 0, false); // y
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0 ; true ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (IP revision change. IP contains locked subcore) ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (IP revision change. IP contains locked subcore) ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (IP revision change. IP contains locked subcore) ; DMA/Bridge Subsystem for PCI Express ; 4.1 (Rev. 3) ; 4.1 (Rev. 20) ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (IP revision change. IP contains locked subcore) ; xc7vx690tffg1761-3", 0, "xdma_0", 0, true); // y - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 2,096 MB. GUI used memory: 64 MB. Current time: 4/4/26, 9:44:51 PM HKT
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+expandTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0 ; false ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (Up-to-date) ; No changes required ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (Up-to-date) ; DMA/Bridge Subsystem for PCI Express ; 4.1 (Rev. 20) ; 4.1 (Rev. 20) ; xdma_0 [DMA/Bridge Subsystem for PCI Express] (Up-to-date) ; xc7vx690tffg1761-3", 0); // y
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Settings]", 1, false); // f
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// WARNING: HEventQueue.dispatchEvent() is taking  1425 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,156 MB. GUI used memory: 85 MB. Current time: 4/4/26, 9:45:12 PM HKT
+// Elapsed time: 10 seconds
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // r
+// [GUI Memory]: 143 MB (+16977kb) [00:04:15]
+// [GUI Memory]: 324 MB (+182334kb) [00:04:23]
+// [Engine Memory]: 2,327 MB (+155637kb) [00:04:23]
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // g
+// HMemoryUtils.trashcanNow. Engine heap size: 2,245 MB. GUI used memory: 94 MB. Current time: 4/4/26, 9:45:31 PM HKT
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", "u50"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Alveo U50 Data Center Accelerator Card ; Alveo U50 Data Center Accelerator Card ; xilinx.com ; 1.3 ; xcu50-fsvh2104-2-e ; 2104 ; 1.3 ; 416 ; 871680 ; 1743360 ; 1344 ; 640 ; 5952 ;  ; 40960 ;  ; 0 ; 0 ; 20 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 20 ; 0 ; 0 ; 0 ; 0 ; 0 ; 5 ; 8 ;  ; 5 ;  ;  ; 2 ;  ;  ; 0 ; 100 ; 100 ; E ; 0.825 ; 0.850 ; 0.876", 0, "Alveo U50 Data Center Accelerator Card", 0, false); // I
+openHTML ("http://www.xilinx.com/u50");I
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Select Device"); // c
+// Elapsed time: 47 seconds
+selectComboBox(PAResourceQtoS.SettingsProjectGeneralPage_TARGET_LANGUAGE, "Verilog", 1); // d
+// Elapsed time: 11 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_MODIFY
+// PAPropertyPanels.initPanels (xdma_0.xci) elapsed time: 0.4s
+// TclEventType: RUN_MODIFY
+// Tcl Message: set_property board_part xilinx.com:au50:part0:1.3 [current_project] 
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PART_MODIFIED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: INFO: [Project 1-152] Project part set to virtexuplusHBM (xcu50-fsvh2104-2-e) 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property target_language Verilog [current_project] 
+// Tcl Message: set_property dataflow_viewer_settings "min_width=16"   [current_fileset] 
+dismissDialog("Change Settings"); // bq
+dismissDialog("Settings"); // d
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie3_ip ; false ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (Up-to-date) ; No changes required ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (Up-to-date) ; Virtex-7 FPGA Gen3 Integrated Block for PCI Express ; 4.3 (Rev. 12) ; 4.3 (Rev. 12) ; xdma_0_pcie3_ip [Virtex-7 FPGA Gen3 Integrated Block for PCI Express] (Up-to-date) ; xc7vx690tffg1761-3", 2, "xdma_0_pcie3_ip", 0, false); // y
+selectTreeTableHeader(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "Upgrade", 1); // y
+selectTreeTableHeader(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "Upgrade", 1); // y
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// Tcl Message: upgrade_ip -vlnv xilinx.com:ip:xdma:4.1 [get_ips  xdma_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'xdma_0' 
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,516 MB. GUI used memory: 125 MB. Current time: 4/4/26, 9:47:11 PM HKT
+// Tcl Message: INFO: [Device 21-403] Loading part xcu50-fsvh2104-2-e 
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [Engine Memory]: 3,522 MB (+1130856kb) [00:06:08]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: xit::create_sub_core: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8837.836 ; gain = 1149.395 ; free physical = 53462 ; free virtual = 89716 
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated xdma_0 to use current project options 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'xdma_0'... 
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/ip_upgrade.log'. 
+// Tcl Message: upgrade_ip: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 8868.859 ; gain = 1180.418 ; free physical = 53426 ; free virtual = 89684 
+// Tcl Message: export_ip_user_files -of_objects [get_ips xdma_0] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2974 ms.
+// Elapsed time: 20 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// HMemoryUtils.trashcanNow. Engine heap size: 3,554 MB. GUI used memory: 128 MB. Current time: 4/4/26, 9:47:27 PM HKT
+// Elapsed time: 11 seconds
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "10", 9); // d
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// Tcl Message: generate_target all [get_files  /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'xdma_0'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'xdma_0'... INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'xdma_0'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'xdma_0'... 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 8940.895 ; gain = 0.000 ; free physical = 53346 ; free virtual = 89662 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all xdma_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: xdma_0 
+// Tcl Message: export_ip_user_files -of_objects [get_files /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci] 
+// Tcl Message: launch_runs xdma_0_synth_1 -jobs 10 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: xdma_0 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Apr  4 21:47:49 2026] Launched xdma_0_synth_1... Run output will be captured here: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 21 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// HMemoryUtils.trashcanNow. Engine heap size: 3,604 MB. GUI used memory: 126 MB. Current time: 4/4/26, 9:48:06 PM HKT
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// Elapsed time: 20 seconds
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTreeTableHeader(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "Upgrade", 1); // y
+selectTreeTableHeader(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "Upgrade", 1); // y
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie4c_ip ; false ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; No changes required ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; UltraScale+ Integrated Block (PCIE4C) for PCI Express ; 1.0 (Rev. 21) ; 1.0 (Rev. 21) ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; xcu50-fsvh2104-2-e", 3, "xdma_0_pcie4c_ip", 0, true); // y - Node
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie4c_ip ; false ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; No changes required ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; UltraScale+ Integrated Block (PCIE4C) for PCI Express ; 1.0 (Rev. 21) ; 1.0 (Rev. 21) ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; xcu50-fsvh2104-2-e", 3, "xdma_0_pcie4c_ip", 0, true); // y - Node
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie4c_ip ; false ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; No changes required ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; UltraScale+ Integrated Block (PCIE4C) for PCI Express ; 1.0 (Rev. 21) ; 1.0 (Rev. 21) ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; xcu50-fsvh2104-2-e", 3, "xdma_0_pcie4c_ip", 0, true); // y - Node
+expandTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie4c_ip ; false ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; No changes required ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; UltraScale+ Integrated Block (PCIE4C) for PCI Express ; 1.0 (Rev. 21) ; 1.0 (Rev. 21) ; xdma_0_pcie4c_ip [UltraScale+ Integrated Block (PCIE4C) for PCI Express] (Up-to-date) ; xcu50-fsvh2104-2-e", 3); // y
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "xdma_0_pcie4c_ip_gt ; false ; xdma_0_pcie4c_ip_gt [UltraScale FPGAs Transceivers Wizard] (Up-to-date) ; No changes required ; xdma_0_pcie4c_ip_gt [UltraScale FPGAs Transceivers Wizard] (Up-to-date) ; UltraScale FPGAs Transceivers Wizard ; 1.7 (Rev. 14) ; 1.7 (Rev. 14) ; xdma_0_pcie4c_ip_gt [UltraScale FPGAs Transceivers Wizard] (Up-to-date) ; xcu50-fsvh2104-2-e", 4, "xdma_0_pcie4c_ip_gt", 0, false); // y
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_ecc]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_be_1024]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_be_1024]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_ecc]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20_blk_mem_64_reg_be (xdma_v4_1_20_blk_mem_64_reg_be.xci)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_reg_ecc]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_2048 (xdma_0_dma_bram_wrap_2048.sv)]", 8, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_0 (xdma_0.sv)]", 9, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_2048 (xdma_0_dma_bram_wrap_2048.sv)]", 8, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_reg_ecc]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20_blk_mem_64_reg_be (xdma_v4_1_20_blk_mem_64_reg_be.xci)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_ecc]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv), xdma_v4_1_20.xdma_v4_1_20_blk_mem_64_noreg_be_1024]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_2048 (xdma_0_dma_bram_wrap_2048.sv)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_0 (xdma_0.sv)]", 5, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_fifo_64x512_wrap (xdma_0_dma_bram_wrap.sv)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_BufferMem (axidma_fifo.vh)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_GenericFIFO1R2W (axidma_fifo.vh)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_mem_simple_dport_bram (xdma_0_dma_bram_wrap.sv)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), axi_bram_i : axi_bram (axi_bram.sv)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_mem_simple_dport_bram (xdma_0_dma_bram_wrap.sv)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_GenericFIFO1R2W (axidma_fifo.vh)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_BufferMem (axidma_fifo.vh)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_fifo_64x512_wrap (xdma_0_dma_bram_wrap.sv)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_0 (xdma_0.sv)]", 5, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_2048 (xdma_0_dma_bram_wrap_2048.sv)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci), xdma_v4_1_20_dma_bram_wrap_1024 (xdma_0_dma_bram_wrap_1024.sv)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), xdma_0_i : xdma_0 (xdma_0.xci)]", 2, true); // D - Node
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top (fpga_top.sv), axi_bram_i : axi_bram (axi_bram.sv)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 5, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, fpga_top.xdc]", 6, false); // D
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// Elapsed time: 12 seconds
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_EXISTING_OR_CREATE_NEW_CONSTRAINTS, "Add"); // B
+selectMenuItem(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files..."); // ao
+setFileChooser("/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/alveo-u50-xdc.xdc");
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 37 seconds
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Add Sources"); // c
+// Tcl Message: add_files -fileset constrs_1 -norecurse /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/alveo-u50-xdc.xdc 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, fpga_top.xdc]", 6, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'c' command handler elapsed time: 6 seconds
+dismissDialog("Remove Sources"); // U
+// Tcl Message: export_ip_user_files -of_objects  [get_files /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/fpga_top.xdc] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  -fileset constrs_1 /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/fpga_top.xdc 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7, true); // D - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 3,620 MB. GUI used memory: 128 MB. Current time: 4/4/26, 9:50:21 PM HKT
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  3922 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, fpga_top (fpga_top.sv)]", 9, true); // D - Node
+// Elapsed time: 12 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectButton(PAResourceItoN.MainToolbarMgr_RUN, (String) null); // ac
+selectMenuItem(PAResourceCommand.PACommandNames_RUN_SYNTHESIS, "Run Synthesis"); // ao
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "16", 15); // d
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 16 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Sat Apr  4 21:50:59 2026] Launched synth_1... Run output will be captured here: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/synth_1/runme.log 
+// 'i' command handler elapsed time: 11 seconds
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 58 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 16 
+// Tcl Message: [Sat Apr  4 21:52:09 2026] Launched impl_1... Run output will be captured here: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/runme.log 
+// 'a' command handler elapsed time: 11 seconds
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 126 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // S.a
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Design Level, [DRC INBB-3] Black Box Instances: Cell 'refclk_ibuf' of type 'IBUFDS_GTE2' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.. ]", 18, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 19, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 19, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 19, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Design Level, [DRC INBB-3] Black Box Instances: Cell 'refclk_ibuf' of type 'IBUFDS_GTE2' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.. ]", 18, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Design Level]", 17, true); // u.d - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Design Level, [DRC INBB-3] Black Box Instances: Cell 'refclk_ibuf' of type 'IBUFDS_GTE2' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.. ]", 18, false); // u.d
+// Elapsed time: 21 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// WARNING: HEventQueue.dispatchEvent() is taking  1081 ms.
+// Elapsed time: 333 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // g
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 2); // g
+// HMemoryUtils.trashcanNow. Engine heap size: 3,653 MB. GUI used memory: 155 MB. Current time: 4/4/26, 10:00:26 PM HKT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,654 MB. GUI used memory: 153 MB. Current time: 4/4/26, 10:30:26 PM HKT
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,665 MB. GUI used memory: 103 MB. Current time: 4/4/26, 10:50:46 PM HKT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,697 MB. GUI used memory: 103 MB. Current time: 4/4/26, 10:55:16 PM HKT
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// [Engine Memory]: 3,700 MB (+1649kb) [01:15:20]
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE

@@ -1,0 +1,1 @@
+cmd_/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/Module.symvers := sed 's/\.ko$$/\.o/' /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/modules.order | scripts/mod/modpost -m -a  -o /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/Module.symvers -e -i Module.symvers   -T -

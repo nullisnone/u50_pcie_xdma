@@ -1,0 +1,87 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Apr  5 17:19:53 2026
+# Process ID: 749816
+# Current directory: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram
+# Command line: vivado -mode batch -source new-program.tcl
+# Log file: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.log
+# Journal file: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.jou
+# Running On: hk-office-srv02, OS: Linux, CPU Frequency: 3200.000 MHz, CPU Physical cores: 8, Host memory: 67044 MB
+#-----------------------------------------------------------
+source new-program.tcl
+# open_hw_manager
+# connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-07:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.
+
+
+
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/500202A8045AA
+# current_hw_device [get_hw_devices xcu50_u55n_0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xcu50_u55n_0] 0]
+INFO: [Labtools 27-2302] Device xcu50_u55n (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+# create_hw_cfgmem -hw_device [lindex [get_hw_devices xcu50_u55n_0] 0] [lindex [get_cfgmem_parts {mt25qu01g-spi-x1_x2_x4}] 0]
+# set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# refresh_hw_device [lindex [get_hw_devices xcu50_u55n_0] 0]
+INFO: [Labtools 27-2302] Device xcu50_u55n (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+# write_cfgmem -force -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs"
+Command: write_cfgmem -force -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs
+Creating config memory files...
+Creating bitstream load up from address 0x01002000
+Loading bitfile /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit
+Writing file /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs
+Writing log file /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.prm
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               128M
+Start Address      0x00000000
+End Address        0x07FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x01002000    0x01EBE4F7    Apr  5 15:44:02 2026    /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_cfgmem completed successfully
+# set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.FILES [list "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+# startgroup 
+# create_hw_bitstream -hw_device [lindex [get_hw_devices xcu50_u55n_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xcu50_u55n_0] 0]]
+# program_hw_devices [lindex [get_hw_devices xcu50_u55n_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 4428.535 ; gain = 0.000 ; free physical = 42915 ; free virtual = 80783
+# refresh_hw_device [lindex [get_hw_devices xcu50_u55n_0] 0]
+INFO: [Labtools 27-2302] Device xcu50_u55n (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+# program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+Mfg ID : 20   Memory Type : bb   Memory Capacity : 21   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:00.35 ; elapsed = 00:05:41 . Memory (MB): peak = 4428.535 ; gain = 0.000 ; free physical = 42875 ; free virtual = 80745
+# endgroup
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  5 17:25:53 2026...

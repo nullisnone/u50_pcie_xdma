@@ -1,0 +1,1 @@
+cmd_/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/modules.order := {   echo /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/xdma.ko; :; } | awk '!x[$$0]++' - > /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/host_software/driver/xdma/modules.order
