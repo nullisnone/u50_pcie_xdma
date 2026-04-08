@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/fpga_top.tcl"
+  variable script "/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/impl_1/fpga_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -131,17 +131,19 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.cache/wt [current_project]
-  set_property parent.project_path /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.xpr [current_project]
-  set_property ip_output_repo /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.cache/ip [current_project]
+  set_property webtalk.parent_dir /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.cache/wt [current_project]
+  set_property parent.project_path /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.xpr [current_project]
+  set_property ip_output_repo /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/synth_1/fpga_top.dcp
-  read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci
+  add_files -quiet /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/synth_1/fpga_top.dcp
+  read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0.xci
+  read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.srcs/sources_1/ip/fp32_add_0/fp32_add_0.xci
+  read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.srcs/sources_1/ip/fp32_mul_0/fp32_mul_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/alveo-u50-xdc.xdc
+  read_xdc /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/alveo-u50-xdc.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

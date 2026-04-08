@@ -57,29 +57,73 @@
 
 # QPLL1 reference clock constraint (will be overridden by required constraint on IBUFDS_GTE4 input in context)
 create_clock -period 10.0 [get_ports gtrefclk01_in[0]]
+create_clock -period 10.0 [get_ports gtrefclk01_in[1]]
 
 # CPLL reference clock constraint (will be overridden by required constraint on IBUFDS_GTE4 input in context)
 
 # Internal TX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
 create_clock -period 2.5 [get_ports txusrclk_in[0]]
+create_clock -period 2.5 [get_ports txusrclk_in[1]]
+create_clock -period 2.5 [get_ports txusrclk_in[2]]
+create_clock -period 2.5 [get_ports txusrclk_in[3]]
+create_clock -period 2.5 [get_ports txusrclk_in[4]]
+create_clock -period 2.5 [get_ports txusrclk_in[5]]
+create_clock -period 2.5 [get_ports txusrclk_in[6]]
+create_clock -period 2.5 [get_ports txusrclk_in[7]]
 
 # External TX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
 create_clock -period 2.5 [get_ports txusrclk2_in[0]]
+create_clock -period 2.5 [get_ports txusrclk2_in[1]]
+create_clock -period 2.5 [get_ports txusrclk2_in[2]]
+create_clock -period 2.5 [get_ports txusrclk2_in[3]]
+create_clock -period 2.5 [get_ports txusrclk2_in[4]]
+create_clock -period 2.5 [get_ports txusrclk2_in[5]]
+create_clock -period 2.5 [get_ports txusrclk2_in[6]]
+create_clock -period 2.5 [get_ports txusrclk2_in[7]]
 
 # Internal RX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
 create_clock -period 2.5 [get_ports rxusrclk_in[0]]
+create_clock -period 2.5 [get_ports rxusrclk_in[1]]
+create_clock -period 2.5 [get_ports rxusrclk_in[2]]
+create_clock -period 2.5 [get_ports rxusrclk_in[3]]
+create_clock -period 2.5 [get_ports rxusrclk_in[4]]
+create_clock -period 2.5 [get_ports rxusrclk_in[5]]
+create_clock -period 2.5 [get_ports rxusrclk_in[6]]
+create_clock -period 2.5 [get_ports rxusrclk_in[7]]
 
 # External RX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
 create_clock -period 2.5 [get_ports rxusrclk2_in[0]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[1]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[2]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[3]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[4]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[5]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[6]]
+create_clock -period 2.5 [get_ports rxusrclk2_in[7]]
 
 # DRP clock constraint for CHANNEL primitive
 create_clock -period 10.0 [get_ports drpclk_in[0]]
+create_clock -period 10.0 [get_ports drpclk_in[1]]
+create_clock -period 10.0 [get_ports drpclk_in[2]]
+create_clock -period 10.0 [get_ports drpclk_in[3]]
+create_clock -period 10.0 [get_ports drpclk_in[4]]
+create_clock -period 10.0 [get_ports drpclk_in[5]]
+create_clock -period 10.0 [get_ports drpclk_in[6]]
+create_clock -period 10.0 [get_ports drpclk_in[7]]
 
 # DRP clock constraint for COMMON primitive
 create_clock -period 10.0 [get_ports drpclk_common_in[0]]
+create_clock -period 10.0 [get_ports drpclk_common_in[1]]
 
 # Digital monitor clock constraint
 create_clock -period 10.0 [get_ports dmonitorclk_in[0]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[1]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[2]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[3]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[4]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[5]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[6]]
+create_clock -period 10.0 [get_ports dmonitorclk_in[7]]
 
 
 ##set_false_path -to [get_cells -hierarchical -filter {NAME =~ *reset_synchronizer*inst/rst_in_*_reg}] -quiet

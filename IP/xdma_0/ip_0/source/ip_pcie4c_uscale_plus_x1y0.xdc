@@ -63,16 +63,16 @@
 # Package      - fsvh2104
 # Speed grade  - -2
 # PCIe Block   - X1Y0
-# Link Speed   - Gen2 - Gb/s
-# Link Width   - X1
-# AXIST Width  - 64-bit
-# AXIST Frequ  - 62.5 MHz = User Clock
-# Core Clock   - 250 MHz
+# Link Speed   - Gen3 - 8.0 Gb/s
+# Link Width   - X8
+# AXIST Width  - 256-bit
+# AXIST Frequ  - 250 MHz = User Clock
+# Core Clock   - 500 MHz
 # Pipe Clock   - 125 MHz (Gen1) : 250 MHz (Gen2/Gen3/Gen4)
 #
 # Xilinx Reference Board is AU50
 #
-# master_gt_quad_inx  - 0
+# master_gt_quad_inx  - 3
 # master_gt_container - 27
 # gt_type             - gtye4
 #
@@ -124,10 +124,10 @@ set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~TXOUTCLKSEL[2]} -of_objects
 set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~TXOUTCLKSEL[1]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
 set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~TXOUTCLKSEL[0]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
 # These pins are dynamic and added case analysis constrains. so that tool do not complain any warnings.
-set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~TXRATE[0]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
-set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~RXRATE[0]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
-set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~TXRATE[1]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
-set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~RXRATE[1]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
+set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~TXRATE[0]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
+set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~RXRATE[0]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
+set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~TXRATE[1]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
+set_case_analysis 1 [get_pins -filter {REF_PIN_NAME=~RXRATE[1]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
 set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~TXRATE[2]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
 set_case_analysis 0 [get_pins -filter {REF_PIN_NAME=~RXRATE[2]} -of_objects [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ ADVANCED.GT.* }]]
 #
@@ -137,15 +137,18 @@ set_false_path -from [get_pins -filter {REF_PIN_NAME=~RXUSRCLK2} -of_objects [ge
 #
 #
 # Make sure that tool gets the correct DIV value for pipe_clock during synthesis as these DIV pins are dynamic.
-set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[0]]
-set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[1]]
-set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[2]]
 set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_pclk/DIV[0]]
 set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_pclk/DIV[1]]
 set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_pclk/DIV[2]]
-set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_coreclk/DIV[0]]
+set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_coreclk/DIV[0]]
 set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_coreclk/DIV[1]]
 set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_coreclk/DIV[2]]
+set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[0]]
+set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[1]]
+set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/DIV[2]]
+set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_mcapclk/DIV[0]]
+set_case_analysis 1 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_mcapclk/DIV[1]]
+set_case_analysis 0 [get_pins xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_mcapclk/DIV[2]]
 ###############################################################################
 # TIMING Exceptions - False Paths
 ###############################################################################
@@ -183,6 +186,8 @@ set_false_path -to [get_pins user_reset_reg/PRE]
 #set_property USER_CLOCK_ROOT X7Y1 [get_nets -of_objects [get_pins -hierarchical -filter NAME=~*/phy_clk_i/bufg_gt_intclk/O]]
 #set_property USER_CLOCK_ROOT X7Y1 [get_nets -of_objects [get_pins -hierarchical -filter NAME=~*/phy_clk_i/bufg_gt_coreclk/O]]
 #set_property USER_CLOCK_ROOT X7Y1 [get_nets -of_objects [get_pins -hierarchical -filter NAME=~*/phy_clk_i/bufg_gt_userclk/O]]
+#set_property USER_CLOCK_ROOT X7Y1 [get_nets -of_objects [get_pins -hierarchical -filter NAME=~*/phy_clk_i/bufg_gt_pclk/O]]
+#set_property USER_CLOCK_ROOT X7Y1 [get_nets -of_objects [get_pins -hierarchical -filter NAME=~*/phy_clk_i/bufg_gt_mcapclk/O]]
 #
 
 #

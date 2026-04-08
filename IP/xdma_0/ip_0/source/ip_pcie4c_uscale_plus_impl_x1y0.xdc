@@ -64,24 +64,42 @@ set PCIE4MACRO xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/pcie_4_c_e4_inst
 set PCIE4MACROPINS  [get_pins "$PCIE4MACRO/*AXIS*"]
 #
 set PCIE4MACROINPINS [get_pins $PCIE4MACROPINS -filter DIRECTION==IN]
-set_multicycle_path -setup 4 -end   -through $PCIE4MACROINPINS
-set_multicycle_path -hold  3 -end   -through $PCIE4MACROINPINS
+set_multicycle_path -setup 2 -end   -through $PCIE4MACROINPINS
+set_multicycle_path -hold  1 -end   -through $PCIE4MACROINPINS
 #
 set PCIE4MACROOUTPINS [get_pins $PCIE4MACROPINS -filter DIRECTION==OUT]
-set_multicycle_path -setup 4 -start -through $PCIE4MACROOUTPINS
-set_multicycle_path -hold  3 -start -through $PCIE4MACROOUTPINS
+set_multicycle_path -setup 2 -start -through $PCIE4MACROOUTPINS
+set_multicycle_path -hold  1 -start -through $PCIE4MACROOUTPINS
 #
 #
 # Multi Cycle Paths
 set PCIE4INST xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/pcie_4_c_e4_inst
-set USERPINS  [get_pins "$PCIE4INST/CFG* $PCIE4INST/CONF* $PCIE4INST/PCIECQNPREQ* $PCIE4INST/PCIERQTAG* $PCIE4INST/PCIETFC* $PCIE4INST/USERSPARE*"]
+set USERPINS  [get_pins "$PCIE4INST/PCIECQPIPELINEEMPTY $PCIE4INST/PCIECQNPUSERCREDITRCVD $PCIE4INST/PCIEPOSTEDREQDELIVERED $PCIE4INST/PCIECOMPLDELIVERED* $PCIE4INST/AXIUSER* $PCIE4INST/CFG* $PCIE4INST/CONF* $PCIE4INST/PCIECQNPREQ* $PCIE4INST/PCIERQTAG* $PCIE4INST/PCIETFC* $PCIE4INST/USERSPARE*"]
 #
 set USERINPINS [get_pins $USERPINS -filter DIRECTION==IN]
-set_multicycle_path -setup 4 -end   -through $USERINPINS
-set_multicycle_path -hold  3 -end   -through $USERINPINS
+set_multicycle_path -setup 2 -end   -through $USERINPINS
+set_multicycle_path -hold  1 -end   -through $USERINPINS
 #
 set USEROUTPINS [get_pins $USERPINS -filter DIRECTION==OUT]
-set_multicycle_path -setup 4 -start -through $USEROUTPINS
-set_multicycle_path -hold  3 -start -through $USEROUTPINS
+set_multicycle_path -setup 2 -start -through $USEROUTPINS
+set_multicycle_path -hold  1 -start -through $USEROUTPINS
 #
+set USERPINS1  [get_pins "$PCIE4INST/CFGPHYLINKDOWN "]
+set USERINPINS1 [get_pins $USERPINS1 -filter DIRECTION==IN]
+set_multicycle_path -setup 4 -end   -through $USERINPINS1
+set_multicycle_path -hold  3 -end   -through $USERINPINS1
+set USEROUTPINS1 [get_pins $USERPINS1 -filter DIRECTION==OUT]
+set_multicycle_path -setup 4 -start -through $USEROUTPINS1
+set_multicycle_path -hold  3 -start -through $USEROUTPINS1
 #
+# Multi Cycle Paths
+set PCIE4INSTPS xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/pcie_4_c_e4_inst
+set USERPINSPS  [get_pins "$PCIE4INSTPS/PCIERQSEQ*"]
+#
+set USERINPINSPS [get_pins $USERPINSPS -filter DIRECTION==IN]
+set_multicycle_path -setup 2 -end   -through $USERINPINSPS
+set_multicycle_path -hold  1 -end   -through $USERINPINSPS
+#
+set USEROUTPINSPS [get_pins $USERPINSPS -filter DIRECTION==OUT]
+set_multicycle_path -setup 2 -start -through $USEROUTPINSPS
+set_multicycle_path -hold  1 -start -through $USEROUTPINSPS

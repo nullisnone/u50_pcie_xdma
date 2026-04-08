@@ -60,7 +60,7 @@
 #
 create_clock  -period 10 [get_ports sys_clk]
 create_clock  -period 10 [get_ports sys_clk_gt]
-create_clock -name axi_aclk -period 16 [get_ports axi_aclk]
+create_clock -name axi_aclk -period 4 [get_ports axi_aclk]
 	
 #
 #

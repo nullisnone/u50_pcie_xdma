@@ -196,8 +196,8 @@ module xdma_0_pcie4c_ip_phy_pipeline #(
 generate
    for (lane = 0; lane < PHY_LANE; lane = lane + 1) begin: per_lane_ff_chain
 
-      `FF_CHAIN(PIPELINE_STAGES, 64, 64'd0, phy_txdata_chain, phy_pclk, phy_rst, phy_txdata_o[(lane* 64)+:64], {48'h0,phy_txdata_i[(lane* 64)+:16]})
-      `FF_CHAIN(PIPELINE_STAGES, 64, 64'd0, phy_rxdata_chain, phy_pclk, phy_rst, phy_rxdata_o[(lane* 64)+:64], {48'h0,phy_rxdata_i[(lane* 64)+:16]})
+      `FF_CHAIN(PIPELINE_STAGES, 64, 64'd0, phy_txdata_chain, phy_pclk, phy_rst, phy_txdata_o[(lane* 64)+:64], {32'h0,phy_txdata_i[(lane* 64)+:32]})
+      `FF_CHAIN(PIPELINE_STAGES, 64, 64'd0, phy_rxdata_chain, phy_pclk, phy_rst, phy_rxdata_o[(lane* 64)+:64], {32'h0,phy_rxdata_i[(lane* 64)+:32]})
 
       `FF_CHAIN(PIPELINE_STAGES, 2, 2'd0, phy_txdatak_chain, phy_pclk, phy_rst, phy_txdatak_o[(lane* 2)+:2], phy_txdatak_i[(lane* 2)+:2])
       `FF_CHAIN(PIPELINE_STAGES, 1, 1'd0, phy_txdata_valid_chain, phy_pclk, phy_rst, phy_txdata_valid_o[lane], phy_txdata_valid_i[lane])

@@ -19,11 +19,11 @@ set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_h
 refresh_hw_device [lindex [get_hw_devices xcu50_u55n_0] 0]
 
 # 5. Generate the MCS file (Note the correct 0x01002000 start address)
-write_cfgmem -force -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs"
+write_cfgmem -force -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file "/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.mcs"
 
 # 6. Configure Flash Programming Properties
 set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
-set_property PROGRAM.FILES [list "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
+set_property PROGRAM.FILES [list "/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
 set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
 set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]
 set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xcu50_u55n_0] 0]]

@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/alveo-u50-xdc.xdc rfile:../../../alveo-u50-xdc.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/alveo-u50-xdc.xdc rfile:../../../alveo-u50-xdc.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:93 export:INPUT save:INPUT read:READ} [current_design]
 set_operating_conditions -design_power_budget 63
 set_property src_info {type:XDC file:1 line:109 export:INPUT save:INPUT read:READ} [current_design]

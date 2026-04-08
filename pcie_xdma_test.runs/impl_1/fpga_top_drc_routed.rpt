@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Sun Apr  5 15:42:31 2026
+| Date         : Wed Apr  8 16:44:46 2026
 | Host         : hk-office-srv02 running 64-bit unknown
 | Command      : report_drc -file fpga_top_drc_routed.rpt -pb fpga_top_drc_routed.pb -rpx fpga_top_drc_routed.rpx
 | Design       : fpga_top
@@ -24,11 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 22
+             Violations found: 23
 +-----------+----------+----------------------------------------+------------+
 | Rule      | Severity | Description                            | Violations |
 +-----------+----------+----------------------------------------+------------+
 | REQP-1858 | Warning  | RAMB36E2_writefirst_collision_advisory | 22         |
+| RTSTAT-10 | Warning  | No routable loads                      | 1          |
 +-----------+----------+----------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -141,6 +142,18 @@ Related violations: <none>
 REQP-1858#22 Warning
 RAMB36E2_writefirst_collision_advisory  
 Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_repl_inst/bram_rep_int_0/ECC_RAM.RAMB36E2[3].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+8 net(s) have no routable loads. The problem bus(es) and/or net(s) are xdma_0_i/inst/udma_wrapper/dma_top/user_rst_3ff_2_reg_rep__1_n_0,
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_3ff_2_reg_rep_n_0,
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff[2],
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff_reg[0]_rep__13_n_0,
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff_reg[0]_rep__14_n_0,
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff_reg[0]_rep__16_n_0,
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff_reg[0]_rep__17_n_0
+xdma_0_i/inst/udma_wrapper/dma_top/user_rst_n_3ff_reg[0]_rep__7_n_0.
 Related violations: <none>
 
 

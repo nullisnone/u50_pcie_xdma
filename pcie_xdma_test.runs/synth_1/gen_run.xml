@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xcu50-fsvh2104-2-e" LaunchTime="1775371896">
+<GenRun Id="synth_1" LaunchPart="xcu50-fsvh2104-2-e" LaunchTime="1775635012">
   <File Type="VDS-TIMINGSUMMARY" Name="fpga_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="fpga_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="fpga_top_utilization_synth.pb"/>
@@ -52,5 +52,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="fp32_mul_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fp32_add_0"/>
   <BlockFileSet Type="BlockSrcs" Name="xdma_0"/>
 </GenRun>

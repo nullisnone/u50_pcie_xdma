@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.tcl"
+  variable script "/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,11 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "xdma_0_synth_1" START { ROLLUP_AUTO }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param chipscope.maxJobs 4
-set_param power.BramSDPPropagationFix 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -84,30 +79,30 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.cache/wt [current_project]
-set_property parent.project_path /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.xpr [current_project]
+set_property webtalk.parent_dir /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.cache/wt [current_project]
+set_property parent.project_path /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:au50:part0:1.3 [current_project]
-set_property ip_output_repo /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.cache/ip [current_project]
+set_property ip_output_repo /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.xci
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_2/xdma_v4_1_20_blk_mem_64_noreg_be_ooc.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_1/xdma_v4_1_20_blk_mem_64_reg_be_ooc.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4c_ip_gt_ooc.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4c_ip_gt.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/xdma_0_pcie4c_ip_board.xdc]
-set_property used_in_synthesis false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_impl_x1y0.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_impl_x1y0.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/synth/xdma_0_pcie4c_ip_ooc.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/synth/xdma_0_pcie4c_ip_late.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_x1y0.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_board.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc]
-set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/synth/xdma_0_ooc.xdc]
+read_ip -quiet /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0.xci
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_2/xdma_v4_1_20_blk_mem_64_noreg_be_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_1/xdma_v4_1_20_blk_mem_64_reg_be_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4c_ip_gt_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4c_ip_gt.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/xdma_0_pcie4c_ip_board.xdc]
+set_property used_in_synthesis false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_impl_x1y0.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_impl_x1y0.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/synth/xdma_0_pcie4c_ip_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/synth/xdma_0_pcie4c_ip_late.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/ip_0/source/ip_pcie4c_uscale_plus_x1y0.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_board.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc]
+set_property used_in_implementation false [get_files -all /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/synth/xdma_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -123,7 +118,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1 -new_name xdma_0 -ip [get_ips xdma_0]]
+set cacheID [config_ip_cache -export -no_bom  -dir /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1 -new_name xdma_0 -ip [get_ips xdma_0]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -178,32 +173,32 @@ create_report "xdma_0_synth_1_synth_report_utilization_0" "report_utilization -f
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.dcp /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.dcp
+  file copy -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.dcp /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.v
+  write_verilog -force -mode synth_stub /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.vhdl
+  write_vhdl -force -mode synth_stub /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_sim_netlist.v
+  write_verilog -force -mode funcsim /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -213,47 +208,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.dcp /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0.dcp
+  file copy -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0.dcp /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_stub.v /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.v
+  file rename -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_stub.v /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_stub.vhdl /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.vhdl
+  file rename -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_stub.vhdl /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_sim_netlist.v /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_sim_netlist.v
+  file rename -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_sim_netlist.v /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_sim_netlist.vhdl /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_sim_netlist.vhdl
+  file rename -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1/xdma_0_sim_netlist.vhdl /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cacheID 
 
-if {[file isdir /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.ip_user_files/ip/xdma_0]} {
+if {[file isdir /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.ip_user_files/ip/xdma_0]} {
   catch { 
-    file copy -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.v /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.ip_user_files/ip/xdma_0
+    file copy -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.v /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.ip_user_files/ip/xdma_0
   }
 }
 
-if {[file isdir /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.ip_user_files/ip/xdma_0]} {
+if {[file isdir /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.ip_user_files/ip/xdma_0]} {
   catch { 
-    file copy -force /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/IP/xdma_0/xdma_0_stub.vhdl /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.ip_user_files/ip/xdma_0
+    file copy -force /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/IP/xdma_0/xdma_0_stub.vhdl /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.ip_user_files/ip/xdma_0
   }
 }
 file delete __synthesis_is_running__

@@ -57,10 +57,10 @@ COMPONENT xdma_0
     sys_clk_gt : IN STD_LOGIC;
     sys_rst_n : IN STD_LOGIC;
     user_lnk_up : OUT STD_LOGIC;
-    pci_exp_txp : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    pci_exp_txn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    pci_exp_rxp : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    pci_exp_rxn : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    pci_exp_txp : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    pci_exp_txn : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    pci_exp_rxp : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    pci_exp_rxn : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     axi_aclk : OUT STD_LOGIC;
     axi_aresetn : OUT STD_LOGIC;
     usr_irq_req : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -73,7 +73,7 @@ COMPONENT xdma_0
     m_axi_bvalid : IN STD_LOGIC;
     m_axi_arready : IN STD_LOGIC;
     m_axi_rid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    m_axi_rdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+    m_axi_rdata : IN STD_LOGIC_VECTOR(255 DOWNTO 0);
     m_axi_rresp : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
     m_axi_rlast : IN STD_LOGIC;
     m_axi_rvalid : IN STD_LOGIC;
@@ -86,8 +86,8 @@ COMPONENT xdma_0
     m_axi_awvalid : OUT STD_LOGIC;
     m_axi_awlock : OUT STD_LOGIC;
     m_axi_awcache : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    m_axi_wdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-    m_axi_wstrb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    m_axi_wdata : OUT STD_LOGIC_VECTOR(255 DOWNTO 0);
+    m_axi_wstrb : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axi_wlast : OUT STD_LOGIC;
     m_axi_wvalid : OUT STD_LOGIC;
     m_axi_bready : OUT STD_LOGIC;
@@ -111,8 +111,8 @@ COMPONENT xdma_0
     m_axib_awready : IN STD_LOGIC;
     m_axib_awlock : OUT STD_LOGIC;
     m_axib_awcache : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    m_axib_wdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-    m_axib_wstrb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    m_axib_wdata : OUT STD_LOGIC_VECTOR(255 DOWNTO 0);
+    m_axib_wstrb : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axib_wlast : OUT STD_LOGIC;
     m_axib_wvalid : OUT STD_LOGIC;
     m_axib_wready : IN STD_LOGIC;
@@ -131,7 +131,7 @@ COMPONENT xdma_0
     m_axib_arlock : OUT STD_LOGIC;
     m_axib_arcache : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     m_axib_rid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    m_axib_rdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+    m_axib_rdata : IN STD_LOGIC_VECTOR(255 DOWNTO 0);
     m_axib_rresp : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
     m_axib_rlast : IN STD_LOGIC;
     m_axib_rvalid : IN STD_LOGIC;

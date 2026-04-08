@@ -50,23 +50,163 @@
 # UltraScale FPGAs Transceivers Wizard IP core-level XDC file
 # ----------------------------------------------------------------------------------------------------------------------
 
-# Commands for enabled transceiver GTYE4_CHANNEL_X1Y15
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y8
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Channel primitive location constraint
-set_property LOC GTYE4_CHANNEL_X1Y15 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[27].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]
+set_property LOC GTYE4_CHANNEL_X1Y8 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[26].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]
 
 # Channel primitive serial data pin location constraints
 # (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
-#set_property package_pin AL1 [get_ports gtyrxn_in[0]]
-#set_property package_pin AL2 [get_ports gtyrxp_in[0]]
-#set_property package_pin Y4 [get_ports gtytxn_out[0]]
-#set_property package_pin Y5 [get_ports gtytxp_out[0]]
+#set_property package_pin AU1 [get_ports gtyrxn_in[0]]
+#set_property package_pin AU2 [get_ports gtyrxp_in[0]]
+#set_property package_pin AH4 [get_ports gtytxn_out[0]]
+#set_property package_pin AH5 [get_ports gtytxp_out[0]]
 # CPLL calibration block constraints
 create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*bufg_gt_txoutclkmon_inst}]]
 set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
 set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
 set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[0].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y9
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y9 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[26].*gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AT3 [get_ports gtyrxn_in[1]]
+#set_property package_pin AT4 [get_ports gtyrxp_in[1]]
+#set_property package_pin AE6 [get_ports gtytxn_out[1]]
+#set_property package_pin AE7 [get_ports gtytxp_out[1]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[1].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y10
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y10 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[26].*gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AR1 [get_ports gtyrxn_in[2]]
+#set_property package_pin AR2 [get_ports gtyrxp_in[2]]
+#set_property package_pin AF4 [get_ports gtytxn_out[2]]
+#set_property package_pin AF5 [get_ports gtytxp_out[2]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[2].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y11
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y11 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[26].*gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AP3 [get_ports gtyrxn_in[3]]
+#set_property package_pin AP4 [get_ports gtyrxp_in[3]]
+#set_property package_pin AD4 [get_ports gtytxn_out[3]]
+#set_property package_pin AD5 [get_ports gtytxp_out[3]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[3].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y12
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y12 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[27].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AN1 [get_ports gtyrxn_in[4]]
+#set_property package_pin AN2 [get_ports gtyrxp_in[4]]
+#set_property package_pin AC6 [get_ports gtytxn_out[4]]
+#set_property package_pin AC7 [get_ports gtytxp_out[4]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[4].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y13
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y13 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[27].*gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AK3 [get_ports gtyrxn_in[5]]
+#set_property package_pin AK4 [get_ports gtyrxp_in[5]]
+#set_property package_pin AB4 [get_ports gtytxn_out[5]]
+#set_property package_pin AB5 [get_ports gtytxp_out[5]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[5].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y14
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y14 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[27].*gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AM3 [get_ports gtyrxn_in[6]]
+#set_property package_pin AM4 [get_ports gtyrxp_in[6]]
+#set_property package_pin AA6 [get_ports gtytxn_out[6]]
+#set_property package_pin AA7 [get_ports gtytxp_out[6]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[6].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
+
+
+
+# Commands for enabled transceiver GTYE4_CHANNEL_X1Y15
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Channel primitive location constraint
+set_property LOC GTYE4_CHANNEL_X1Y15 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[27].*gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST}]
+
+# Channel primitive serial data pin location constraints
+# (Provided as comments for your reference. The channel primitive location constraint is sufficient.)
+#set_property package_pin AL1 [get_ports gtyrxn_in[7]]
+#set_property package_pin AL2 [get_ports gtyrxp_in[7]]
+#set_property package_pin Y4 [get_ports gtytxn_out[7]]
+#set_property package_pin Y5 [get_ports gtytxp_out[7]]
+# CPLL calibration block constraints
+create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*O} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*bufg_gt_txoutclkmon_inst}]]
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/testclk_cnt_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/freq_cnt_o_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/tstclk_rst_dly1_reg*}] -quiet
+set_false_path -from [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/state_reg*}] -to [get_cells -hierarchical -filter {NAME =~ *gen_cpll_cal_inst[7].*U_TXOUTCLK_FREQ_COUNTER/testclk_en_dly1_reg*}] -quiet
 
 
 

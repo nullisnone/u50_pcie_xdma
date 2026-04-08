@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Sun Apr  5 15:42:34 2026
+| Date         : Wed Apr  8 16:46:13 2026
 | Host         : hk-office-srv02 running 64-bit unknown
 | Command      : report_methodology -file fpga_top_methodology_drc_routed.rpt -pb fpga_top_methodology_drc_routed.pb -rpx fpga_top_methodology_drc_routed.rpx
 | Design       : fpga_top
@@ -23,14 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 42
+             Violations found: 11
 +-----------+------------------+-------------------------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                                         | Violations |
 +-----------+------------------+-------------------------------------------------------------------------------------+------------+
 | TIMING-54 | Critical Warning | Scoped false path, clock group or max delay datapath only constraint between clocks | 1          |
-| LUTAR-1   | Warning          | LUT drives async reset alert                                                        | 6          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                                        | 7          |
 | NTCN-11   | Warning          | CLOCK_DEDICATED_ROUTE net not driven by global clock buffer                         | 1          |
-| SYNTH-15  | Warning          | Byte wide write enable not inferred                                                 | 32         |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                                   | 1          |
 | TIMING-18 | Warning          | Missing input or output delay                                                       | 1          |
 +-----------+------------------+-------------------------------------------------------------------------------------+------------+
@@ -39,24 +38,44 @@ Table of Contents
 -----------------
 TIMING-54#1 Critical Warning
 Scoped false path, clock group or max delay datapath only constraint between clocks  
-A scoped Clock Group timing constraint is set between clocks pcie_ref_clk0 and xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_intclk/O (see constraint position 61 in the Timing Constraint window in Vivado IDE). It is not recommended to define such scoped constraints between clocks as the constraint impacts timing paths outside of the scope.
+A scoped Clock Group timing constraint is set between clocks pcie_ref_clk0 and xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_intclk/O (see constraint position 96 in the Timing Constraint window in Vivado IDE). It is not recommended to define such scoped constraints between clocks as the constraint impacts timing paths outside of the scope.
 Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_reg/PRE,
-xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_out_reg/PRE,
-xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync1_reg/PRE,
-xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync2_reg/PRE
-xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync3_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/bufg_gt_userclk_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[27].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_3/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/bufg_gt_userclk_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[27].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/intclk_rrst_n_r[4]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/intclk_rrst_n_r_reg[0]/CLR,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/intclk_rrst_n_r_reg[1]/CLR,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/intclk_rrst_n_r_reg[2]/CLR,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/intclk_rrst_n_r_reg[3]/CLR
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_rst_i/intclk_rrst_n_r_reg[4]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[5].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[5].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_out_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[5].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync1_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[5].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync2_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[5].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync3_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[6].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[6].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_out_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[6].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync1_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[6].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync2_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[6].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync3_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_meta_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_out_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync1_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync2_reg/PRE,
+xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4c_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4c_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_cpll_cal_gtye4.gen_cpll_cal_inst[7].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_14_gtye4_cpll_cal_inst/reset_synchronizer_resetin_tx_inst/rst_in_sync3_reg/PRE
+ (the first 15 of 40 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
 LUT drives async reset alert  
 LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/sys_or_hot_rst_pclk_inst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/sys_or_hot_rst_pclk_inst/arststages_ff_reg[0]/PRE,
 xdma_0_i/inst/pcie4c_ip_i/inst/sys_or_hot_rst_pclk_inst/arststages_ff_reg[1]/PRE,
@@ -64,18 +83,18 @@ xdma_0_i/inst/pcie4c_ip_i/inst/sys_or_hot_rst_uclk_inst/arststages_ff_reg[0]/PRE
 xdma_0_i/inst/pcie4c_ip_i/inst/sys_or_hot_rst_uclk_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-LUTAR-1#4 Warning
+LUTAR-1#5 Warning
 LUT drives async reset alert  
 LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/user_lnk_up_cdc_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/user_lnk_up_cdc/arststages_ff_reg[0]/CLR
 xdma_0_i/inst/pcie4c_ip_i/inst/user_lnk_up_cdc/arststages_ff_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-LUTAR-1#5 Warning
+LUTAR-1#6 Warning
 LUT drives async reset alert  
 LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/user_lnk_up_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/user_lnk_up_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-LUTAR-1#6 Warning
+LUTAR-1#7 Warning
 LUT drives async reset alert  
 LUT cell xdma_0_i/inst/pcie4c_ip_i/inst/xdma_0_pcie4c_ip_pcie_4_0_pipe_inst/user_reset_cdc_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) xdma_0_i/inst/pcie4c_ip_i/inst/user_reset_cdc/arststages_ff_reg[0]/PRE,
 xdma_0_i/inst/pcie4c_ip_i/inst/user_reset_cdc/arststages_ff_reg[1]/PRE
@@ -85,166 +104,6 @@ Related violations: <none>
 NTCN-11#1 Warning
 CLOCK_DEDICATED_ROUTE net not driven by global clock buffer  
 Net pcie_refclk_gt is assigned constraint CLOCK_DEDICATED_ROUTE 'ANY_CMT_COLUMN' and is not driven by a global clock buffer. Instead the driver is IBUFDS_GTE4 cell refclk_ibuf. The CLOCK_DEDICATED_ROUTE constraint may not be properly applied. Please check your design.
-Related violations: <none>
-
-SYNTH-15#1 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_0_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#2 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_0_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#3 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_0_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#4 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_0_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#5 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_1_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#6 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_1_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#7 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_1_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#8 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_1_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#9 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_2_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#10 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_2_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#11 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_2_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#12 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_2_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#13 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_3_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#14 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_3_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#15 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_3_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#16 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_3_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#17 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_4_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#18 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_4_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#19 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_4_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#20 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_4_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#21 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_5_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#22 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_5_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#23 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_5_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#24 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_5_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#25 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_6_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#26 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_6_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#27 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_6_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#28 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_6_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#29 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_7_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#30 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_7_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#31 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_7_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#32 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM axi_bram_i/mem_reg_7_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
 Related violations: <none>
 
 TIMING-9#1 Warning

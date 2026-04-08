@@ -59,10 +59,10 @@ xdma_0 your_instance_name (
   .sys_clk_gt(sys_clk_gt),          // input wire sys_clk_gt
   .sys_rst_n(sys_rst_n),            // input wire sys_rst_n
   .user_lnk_up(user_lnk_up),        // output wire user_lnk_up
-  .pci_exp_txp(pci_exp_txp),        // output wire [0 : 0] pci_exp_txp
-  .pci_exp_txn(pci_exp_txn),        // output wire [0 : 0] pci_exp_txn
-  .pci_exp_rxp(pci_exp_rxp),        // input wire [0 : 0] pci_exp_rxp
-  .pci_exp_rxn(pci_exp_rxn),        // input wire [0 : 0] pci_exp_rxn
+  .pci_exp_txp(pci_exp_txp),        // output wire [7 : 0] pci_exp_txp
+  .pci_exp_txn(pci_exp_txn),        // output wire [7 : 0] pci_exp_txn
+  .pci_exp_rxp(pci_exp_rxp),        // input wire [7 : 0] pci_exp_rxp
+  .pci_exp_rxn(pci_exp_rxn),        // input wire [7 : 0] pci_exp_rxn
   .axi_aclk(axi_aclk),              // output wire axi_aclk
   .axi_aresetn(axi_aresetn),        // output wire axi_aresetn
   .usr_irq_req(usr_irq_req),        // input wire [15 : 0] usr_irq_req
@@ -75,7 +75,7 @@ xdma_0 your_instance_name (
   .m_axi_bvalid(m_axi_bvalid),      // input wire m_axi_bvalid
   .m_axi_arready(m_axi_arready),    // input wire m_axi_arready
   .m_axi_rid(m_axi_rid),            // input wire [3 : 0] m_axi_rid
-  .m_axi_rdata(m_axi_rdata),        // input wire [63 : 0] m_axi_rdata
+  .m_axi_rdata(m_axi_rdata),        // input wire [255 : 0] m_axi_rdata
   .m_axi_rresp(m_axi_rresp),        // input wire [1 : 0] m_axi_rresp
   .m_axi_rlast(m_axi_rlast),        // input wire m_axi_rlast
   .m_axi_rvalid(m_axi_rvalid),      // input wire m_axi_rvalid
@@ -88,8 +88,8 @@ xdma_0 your_instance_name (
   .m_axi_awvalid(m_axi_awvalid),    // output wire m_axi_awvalid
   .m_axi_awlock(m_axi_awlock),      // output wire m_axi_awlock
   .m_axi_awcache(m_axi_awcache),    // output wire [3 : 0] m_axi_awcache
-  .m_axi_wdata(m_axi_wdata),        // output wire [63 : 0] m_axi_wdata
-  .m_axi_wstrb(m_axi_wstrb),        // output wire [7 : 0] m_axi_wstrb
+  .m_axi_wdata(m_axi_wdata),        // output wire [255 : 0] m_axi_wdata
+  .m_axi_wstrb(m_axi_wstrb),        // output wire [31 : 0] m_axi_wstrb
   .m_axi_wlast(m_axi_wlast),        // output wire m_axi_wlast
   .m_axi_wvalid(m_axi_wvalid),      // output wire m_axi_wvalid
   .m_axi_bready(m_axi_bready),      // output wire m_axi_bready
@@ -113,8 +113,8 @@ xdma_0 your_instance_name (
   .m_axib_awready(m_axib_awready),  // input wire m_axib_awready
   .m_axib_awlock(m_axib_awlock),    // output wire m_axib_awlock
   .m_axib_awcache(m_axib_awcache),  // output wire [3 : 0] m_axib_awcache
-  .m_axib_wdata(m_axib_wdata),      // output wire [63 : 0] m_axib_wdata
-  .m_axib_wstrb(m_axib_wstrb),      // output wire [7 : 0] m_axib_wstrb
+  .m_axib_wdata(m_axib_wdata),      // output wire [255 : 0] m_axib_wdata
+  .m_axib_wstrb(m_axib_wstrb),      // output wire [31 : 0] m_axib_wstrb
   .m_axib_wlast(m_axib_wlast),      // output wire m_axib_wlast
   .m_axib_wvalid(m_axib_wvalid),    // output wire m_axib_wvalid
   .m_axib_wready(m_axib_wready),    // input wire m_axib_wready
@@ -133,7 +133,7 @@ xdma_0 your_instance_name (
   .m_axib_arlock(m_axib_arlock),    // output wire m_axib_arlock
   .m_axib_arcache(m_axib_arcache),  // output wire [3 : 0] m_axib_arcache
   .m_axib_rid(m_axib_rid),          // input wire [3 : 0] m_axib_rid
-  .m_axib_rdata(m_axib_rdata),      // input wire [63 : 0] m_axib_rdata
+  .m_axib_rdata(m_axib_rdata),      // input wire [255 : 0] m_axib_rdata
   .m_axib_rresp(m_axib_rresp),      // input wire [1 : 0] m_axib_rresp
   .m_axib_rlast(m_axib_rlast),      // input wire m_axib_rlast
   .m_axib_rvalid(m_axib_rvalid),    // input wire m_axib_rvalid

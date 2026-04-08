@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/xdma_0_synth_1'
+HD_PWD='/root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/pcie_xdma_test.runs/xdma_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sun Apr  5 17:19:53 2026
-# Process ID: 749816
-# Current directory: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram
+# Start of session at: Wed Apr  8 17:01:30 2026
+# Process ID: 1638867
+# Current directory: /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma
 # Command line: vivado -mode batch -source new-program.tcl
-# Log file: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.log
-# Journal file: /root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/vivado.jou
+# Log file: /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/vivado.log
+# Journal file: /root/DOWNLOAD/U50/U50-PCIE/u50_pcie_xdma/vivado.jou
 # Running On: hk-office-srv02, OS: Linux, CPU Frequency: 3200.000 MHz, CPU Physical cores: 8, Host memory: 67044 MB
 #-----------------------------------------------------------
 source new-program.tcl

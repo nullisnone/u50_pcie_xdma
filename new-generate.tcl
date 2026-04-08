@@ -48,8 +48,8 @@ wait_on_run impl_1
 
 # 检查实现是否成功
 set run_status [get_property STATUS [get_runs impl_1]]
-if {$run_status == "route_design Complete!"} {
-    puts "impl_1路由完成，生成自定义名称的比特流文件..."
+if {[string match "route_design Complete*" $run_status]} {
+    puts "impl_1路由完成 (Status: $run_status)，生成自定义名称的比特流文件..."
     open_run impl_1
     write_bitstream -force "$project_dir/${project_name}.runs/impl_1/${project_name}.bit"
 } else {
@@ -63,7 +63,7 @@ if {[file exists "$project_dir/$project_name.runs/impl_1/$project_name.bit"]} {
     puts "比特流文件生成失败！"
 }
 
-write_cfgmem  -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs"
+# write_cfgmem  -format mcs -size 128 -interface SPIx4 -loadbit {up 0x01002000 "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.runs/impl_1/pcie_xdma_test.bit" } -file "/root/DOWNLOAD/U50/U50-PCIE/netfpga_pcie_x1_xdma_bram/pcie_xdma_test.mcs"
 
 # 7. 关闭工程
 close_project

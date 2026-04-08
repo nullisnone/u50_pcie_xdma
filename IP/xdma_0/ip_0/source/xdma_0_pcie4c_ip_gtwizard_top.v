@@ -560,8 +560,8 @@ endgenerate
     assign gtwiz_gtye4_cpll_cal_txoutclk_period_in = {PHY_LANE{18'd5000}};  
     assign gtwiz_gtye4_cpll_cal_cnt_tol_in         = {PHY_LANE{18'd50}};    
 
-    assign gtwiz_userclk_tx_reset_in                 = bufgtreset_out[0];
-    assign gtwiz_gtye4_cpll_cal_bufg_ce_in  = {PHY_LANE{bufgtce_out[0]}};
+    assign gtwiz_userclk_tx_reset_in                 = bufgtreset_out[7];
+    assign gtwiz_gtye4_cpll_cal_bufg_ce_in  = {PHY_LANE{bufgtce_out[7]}};
 //-------------------------------------------------------------------------------------------------
 //  Internal Signals
 //-------------------------------------------------------------------------------------------------- 
@@ -611,7 +611,7 @@ endgenerate
     assign txdlybypass_in        = ({PHY_LANE{1'd0}});                                                
  
 
-    assign txphdlypd_in          =  1'b0;
+    assign txphdlypd_in          = {1'b0, !txpmaresetdone_out[1], !txpmaresetdone_out[2], !txpmaresetdone_out[3], !txpmaresetdone_out[4], !txpmaresetdone_out[5], !txpmaresetdone_out[6], !txpmaresetdone_out[7] };
  
  
  
@@ -838,125 +838,192 @@ endgenerate
 
 //--------------------------------------------------------------------- Mapping ----------------------------------------------------------------------------------------------------------------------------------------------
 
-    assign cpllfreqlock_in  = ({PHY_LANE{cplllock_out[0]}});
-    assign txsyncmode_in    = 1'b1; // X0Y7 is the Master. So, txsyncmode_in[0] = 1'b1;
-    assign txsyncin_in      = ({PHY_LANE{txsyncout_out[0]}}); // From Master Lane 0 - X0Y7                  
-    assign pcsrsvdin_in     = {PHY_LANE{14'd0,cplllock_out[0],qpll1lock_all}};
-    assign drpclk_common_in = {GTCOM_DRPCLK};
-    assign pcierateqpll0_in = {1'b0,GT_RATE[1:0]};
-    assign pcierateqpll1_in = {1'b0,GT_RATE[1:0]};
-    assign rate             = {1'd0,GT_RATE[1:0]};
+    assign cpllfreqlock_in = ({PHY_LANE{cplllock_out[7]}});
+    assign txsyncmode_in    = 8'h80; // X0Y7 is the Master. So, txsyncmode_in[7] = 1'b1;
+    assign txsyncin_in      = ({PHY_LANE{txsyncout_out[7]}}); // From Master Lane 0 - X0Y7                  
+    assign pcsrsvdin_in     = {PHY_LANE{14'd0,cplllock_out[7],qpll1lock_all}};
+    assign drpclk_common_in = {2{GTCOM_DRPCLK}};
+    assign pcierateqpll0_in = {2{1'b0,GT_RATE[1:0]}};
+    assign pcierateqpll1_in = {2{1'b0,GT_RATE[1:0]}};
+    assign rate             = {{1'd0,GT_RATE[1:0]},{1'd0,GT_RATE[3:2]},{1'd0,GT_RATE[5:4]},{1'd0,GT_RATE[7:6]},{1'd0,GT_RATE[9:8]},{1'd0,GT_RATE[11:10]},{1'd0,GT_RATE[13:12]},{1'd0,GT_RATE[15:14]}};
 
-    assign gtyrxn_in              = GT_RXN[0];
-    assign gtyrxp_in              = GT_RXP[0];
-    assign GT_TXN                 = gtytxn_out[0];
-    assign GT_TXP                 = gtytxp_out[0];
-    assign rxratemode_in          = GT_RXRATEMODE[0];
-    assign cpllpd_in              = GT_CPLLPD[0];
-    assign rxtermination_in           = GT_RXTERMINATION[0];
-    assign txpmareset_in              = GT_TXPMARESET[0];
-    assign rxpmareset_in              = GT_RXPMARESET[0];
-    assign txpcsreset_in              = GT_TXPCSRESET[0];
-    assign rxpcsreset_in              = GT_RXPCSRESET[0];
-    assign rxbufreset_in              = GT_RXBUFRESET[0];
-    assign rxcdrreset_in              = GT_RXCDRRESET[0];
-    assign rxdfelpmreset_in           = GT_RXDFELPMRESET[0];
-    assign cpllreset_in           = GT_CPLLRESET[0];
-    assign eyescanreset_in        = GT_EYESCANRESET[0];
-    assign txdiffctrl_in          = GT_TXDIFFCTRL[4:0];
-    assign txswing_in             = GT_TXSWING[0];
-    assign txusrclk_in            = GT_TXUSRCLK[0];
-    assign rxusrclk_in            = GT_RXUSRCLK[0];
-    assign txdeemph_in            = GT_TXDEEMPH[1:0];
-    assign rxcdrhold_in           = GT_RXCDRHOLD[0];
-    assign rxlpmen_in             = GT_RXLPMEN[0];
-    assign txusrclk2_in           = GT_TXUSRCLK2[0];
-    assign rxusrclk2_in           = GT_RXUSRCLK2[0];
-    assign gttxreset_in           = GT_GTTXRESET[0];
-    assign gtrxreset_in           = GT_GTRXRESET[0];
-    assign txuserrdy_in           = GT_TXUSERRDY[0];
-    assign rxuserrdy_in           = GT_RXUSERRDY[0];
-    assign txdetectrx_in          = GT_TXDETECTRX[0];
-    assign txelecidle_in          = GT_TXELECIDLE[0];
-    assign rxpolarity_in          = GT_RXPOLARITY[0];
-    assign txprogdivreset_in      = GT_TXPROGDIVRESET[0];
-    assign rxprogdivreset_in      = GT_RXPROGDIVRESET[0];
-    assign txpisopd_in            = GT_TXPISOPD[0];
+    assign gtyrxn_in              = {GT_RXN[0],GT_RXN[1],GT_RXN[2],GT_RXN[3],GT_RXN[4],GT_RXN[5],GT_RXN[6],GT_RXN[7]};
+    assign gtyrxp_in              = {GT_RXP[0],GT_RXP[1],GT_RXP[2],GT_RXP[3],GT_RXP[4],GT_RXP[5],GT_RXP[6],GT_RXP[7]};
+    assign GT_TXN                 = {gtytxn_out[0],gtytxn_out[1],gtytxn_out[2],gtytxn_out[3],gtytxn_out[4],gtytxn_out[5],gtytxn_out[6],gtytxn_out[7]};                                      
+    assign GT_TXP                 = {gtytxp_out[0],gtytxp_out[1],gtytxp_out[2],gtytxp_out[3],gtytxp_out[4],gtytxp_out[5],gtytxp_out[6],gtytxp_out[7]};                                      
+    assign rxratemode_in          = {GT_RXRATEMODE[0],GT_RXRATEMODE[1],GT_RXRATEMODE[2],GT_RXRATEMODE[3],GT_RXRATEMODE[4],GT_RXRATEMODE[5],GT_RXRATEMODE[6],GT_RXRATEMODE[7]};
+    assign cpllpd_in              = {GT_CPLLPD[0],GT_CPLLPD[1],GT_CPLLPD[2],GT_CPLLPD[3],GT_CPLLPD[4],GT_CPLLPD[5],GT_CPLLPD[6],GT_CPLLPD[7]};
+    assign rxtermination_in           = {GT_RXTERMINATION[0],GT_RXTERMINATION[1],GT_RXTERMINATION[2],GT_RXTERMINATION[3],GT_RXTERMINATION[4],GT_RXTERMINATION[5],GT_RXTERMINATION[6],GT_RXTERMINATION[7]};
+    assign txpmareset_in              = {GT_TXPMARESET[0],GT_TXPMARESET[1],GT_TXPMARESET[2],GT_TXPMARESET[3],GT_TXPMARESET[4],GT_TXPMARESET[5],GT_TXPMARESET[6],GT_TXPMARESET[7]};
+    assign rxpmareset_in              = {GT_RXPMARESET[0],GT_RXPMARESET[1],GT_RXPMARESET[2],GT_RXPMARESET[3],GT_RXPMARESET[4],GT_RXPMARESET[5],GT_RXPMARESET[6],GT_RXPMARESET[7]};
+    assign txpcsreset_in              = {GT_TXPCSRESET[0],GT_TXPCSRESET[1],GT_TXPCSRESET[2],GT_TXPCSRESET[3],GT_TXPCSRESET[4],GT_TXPCSRESET[5],GT_TXPCSRESET[6],GT_TXPCSRESET[7]};
+    assign rxpcsreset_in              = {GT_RXPCSRESET[0],GT_RXPCSRESET[1],GT_RXPCSRESET[2],GT_RXPCSRESET[3],GT_RXPCSRESET[4],GT_RXPCSRESET[5],GT_RXPCSRESET[6],GT_RXPCSRESET[7]};
+    assign rxbufreset_in              = {GT_RXBUFRESET[0],GT_RXBUFRESET[1],GT_RXBUFRESET[2],GT_RXBUFRESET[3],GT_RXBUFRESET[4],GT_RXBUFRESET[5],GT_RXBUFRESET[6],GT_RXBUFRESET[7]};
+    assign rxcdrreset_in              = {GT_RXCDRRESET[0],GT_RXCDRRESET[1],GT_RXCDRRESET[2],GT_RXCDRRESET[3],GT_RXCDRRESET[4],GT_RXCDRRESET[5],GT_RXCDRRESET[6],GT_RXCDRRESET[7]};
+    assign rxdfelpmreset_in           = {GT_RXDFELPMRESET[0],GT_RXDFELPMRESET[1],GT_RXDFELPMRESET[2],GT_RXDFELPMRESET[3],GT_RXDFELPMRESET[4],GT_RXDFELPMRESET[5],GT_RXDFELPMRESET[6],GT_RXDFELPMRESET[7]};
+    assign cpllreset_in           = {GT_CPLLRESET[0],GT_CPLLRESET[1],GT_CPLLRESET[2],GT_CPLLRESET[3],GT_CPLLRESET[4],GT_CPLLRESET[5],GT_CPLLRESET[6],GT_CPLLRESET[7]};
+    assign eyescanreset_in        = {GT_EYESCANRESET[0],GT_EYESCANRESET[1],GT_EYESCANRESET[2],GT_EYESCANRESET[3],GT_EYESCANRESET[4],GT_EYESCANRESET[5],GT_EYESCANRESET[6],GT_EYESCANRESET[7]};
+    assign txdiffctrl_in          = {GT_TXDIFFCTRL[4:0],GT_TXDIFFCTRL[9:5],GT_TXDIFFCTRL[14:10],GT_TXDIFFCTRL[19:15],GT_TXDIFFCTRL[24:20],GT_TXDIFFCTRL[29:25],GT_TXDIFFCTRL[34:30],GT_TXDIFFCTRL[39:35]};
+    assign txswing_in             = {GT_TXSWING[0],GT_TXSWING[1],GT_TXSWING[2],GT_TXSWING[3],GT_TXSWING[4],GT_TXSWING[5],GT_TXSWING[6],GT_TXSWING[7]};
+    assign txusrclk_in            = {GT_TXUSRCLK[0],GT_TXUSRCLK[1],GT_TXUSRCLK[2],GT_TXUSRCLK[3],GT_TXUSRCLK[4],GT_TXUSRCLK[5],GT_TXUSRCLK[6],GT_TXUSRCLK[7]};
+    assign rxusrclk_in            = {GT_RXUSRCLK[0],GT_RXUSRCLK[1],GT_RXUSRCLK[2],GT_RXUSRCLK[3],GT_RXUSRCLK[4],GT_RXUSRCLK[5],GT_RXUSRCLK[6],GT_RXUSRCLK[7]};
+    assign txdeemph_in            = {GT_TXDEEMPH[1:0],GT_TXDEEMPH[3:2],GT_TXDEEMPH[5:4],GT_TXDEEMPH[7:6],GT_TXDEEMPH[9:8],GT_TXDEEMPH[11:10],GT_TXDEEMPH[13:12],GT_TXDEEMPH[15:14]};
+    assign rxcdrhold_in           = {GT_RXCDRHOLD[0],GT_RXCDRHOLD[1],GT_RXCDRHOLD[2],GT_RXCDRHOLD[3],GT_RXCDRHOLD[4],GT_RXCDRHOLD[5],GT_RXCDRHOLD[6],GT_RXCDRHOLD[7]};
+    assign rxlpmen_in             = {GT_RXLPMEN[0],GT_RXLPMEN[1],GT_RXLPMEN[2],GT_RXLPMEN[3],GT_RXLPMEN[4],GT_RXLPMEN[5],GT_RXLPMEN[6],GT_RXLPMEN[7]};
+    assign txusrclk2_in           = {GT_TXUSRCLK2[0],GT_TXUSRCLK2[1],GT_TXUSRCLK2[2],GT_TXUSRCLK2[3],GT_TXUSRCLK2[4],GT_TXUSRCLK2[5],GT_TXUSRCLK2[6],GT_TXUSRCLK2[7]};
+    assign rxusrclk2_in           = {GT_RXUSRCLK2[0],GT_RXUSRCLK2[1],GT_RXUSRCLK2[2],GT_RXUSRCLK2[3],GT_RXUSRCLK2[4],GT_RXUSRCLK2[5],GT_RXUSRCLK2[6],GT_RXUSRCLK2[7]};
+    assign gttxreset_in           = {GT_GTTXRESET[0],GT_GTTXRESET[1],GT_GTTXRESET[2],GT_GTTXRESET[3],GT_GTTXRESET[4],GT_GTTXRESET[5],GT_GTTXRESET[6],GT_GTTXRESET[7]};
+    assign gtrxreset_in           = {GT_GTRXRESET[0],GT_GTRXRESET[1],GT_GTRXRESET[2],GT_GTRXRESET[3],GT_GTRXRESET[4],GT_GTRXRESET[5],GT_GTRXRESET[6],GT_GTRXRESET[7]};
+    assign txuserrdy_in           = {GT_TXUSERRDY[0],GT_TXUSERRDY[1],GT_TXUSERRDY[2],GT_TXUSERRDY[3],GT_TXUSERRDY[4],GT_TXUSERRDY[5],GT_TXUSERRDY[6],GT_TXUSERRDY[7]};
+    assign rxuserrdy_in           = {GT_RXUSERRDY[0],GT_RXUSERRDY[1],GT_RXUSERRDY[2],GT_RXUSERRDY[3],GT_RXUSERRDY[4],GT_RXUSERRDY[5],GT_RXUSERRDY[6],GT_RXUSERRDY[7]};
+    assign txdetectrx_in          = {GT_TXDETECTRX[0],GT_TXDETECTRX[1],GT_TXDETECTRX[2],GT_TXDETECTRX[3],GT_TXDETECTRX[4],GT_TXDETECTRX[5],GT_TXDETECTRX[6],GT_TXDETECTRX[7]};
+    assign txelecidle_in          = {GT_TXELECIDLE[0],GT_TXELECIDLE[1],GT_TXELECIDLE[2],GT_TXELECIDLE[3],GT_TXELECIDLE[4],GT_TXELECIDLE[5],GT_TXELECIDLE[6],GT_TXELECIDLE[7]};
+    assign rxpolarity_in          = {GT_RXPOLARITY[0],GT_RXPOLARITY[1],GT_RXPOLARITY[2],GT_RXPOLARITY[3],GT_RXPOLARITY[4],GT_RXPOLARITY[5],GT_RXPOLARITY[6],GT_RXPOLARITY[7]};
+    assign txprogdivreset_in      = {GT_TXPROGDIVRESET[0],GT_TXPROGDIVRESET[1],GT_TXPROGDIVRESET[2],GT_TXPROGDIVRESET[3],GT_TXPROGDIVRESET[4],GT_TXPROGDIVRESET[5],GT_TXPROGDIVRESET[6],GT_TXPROGDIVRESET[7]};
+    assign rxprogdivreset_in      = {GT_RXPROGDIVRESET[0],GT_RXPROGDIVRESET[1],GT_RXPROGDIVRESET[2],GT_RXPROGDIVRESET[3],GT_RXPROGDIVRESET[4],GT_RXPROGDIVRESET[5],GT_RXPROGDIVRESET[6],GT_RXPROGDIVRESET[7]};
+    assign txpisopd_in            = {GT_TXPISOPD[0],GT_TXPISOPD[1],GT_TXPISOPD[2],GT_TXPISOPD[3],GT_TXPISOPD[4],GT_TXPISOPD[5],GT_TXPISOPD[6],GT_TXPISOPD[7]};
 
-    assign dmonitorclk_in         = GT_DMONITORCLK[0];
-    assign dmonfiforeset_in       = GT_DMONFIFORESET[0];
-    assign GT_DMONITOROUT         = dmonitorout_out[15:0];
-    assign GT_TXOUTCLK            = txoutclk_out[0];
-    assign GT_RXCOMMADET          = rxcommadet_out[0];
-    assign GT_GTPOWERGOOD         = gtpowergood_out[0];
-    assign GT_TXRESETDONE         = txresetdone_out[0];
-    assign GT_RXRESETDONE         = rxresetdone_out[0];
-    assign GT_TXPHINITDONE        = txphinitdone_out[0];
-    assign GT_TXPHALIGNDONE       = txphaligndone_out[0];
-    assign GT_RXPMARESETDONE      = rxpmaresetdone_out[0];
-    assign GT_TXPROGDIVRESETDONE  = txprgdivresetdone_out[0];
+    assign dmonitorclk_in         = {GT_DMONITORCLK[0],GT_DMONITORCLK[1],GT_DMONITORCLK[2],GT_DMONITORCLK[3],GT_DMONITORCLK[4],GT_DMONITORCLK[5],GT_DMONITORCLK[6],GT_DMONITORCLK[7]};
+    assign dmonfiforeset_in       = {GT_DMONFIFORESET[0],GT_DMONFIFORESET[1],GT_DMONFIFORESET[2],GT_DMONFIFORESET[3],GT_DMONFIFORESET[4],GT_DMONFIFORESET[5],GT_DMONFIFORESET[6],GT_DMONFIFORESET[7]};
+    assign GT_DMONITOROUT         = {dmonitorout_out[15:0],dmonitorout_out[31:16],dmonitorout_out[47:32],dmonitorout_out[63:48],dmonitorout_out[79:64],dmonitorout_out[95:80],dmonitorout_out[111:96],dmonitorout_out[127:112]};     
+    assign GT_TXOUTCLK            = {txoutclk_out[0],txoutclk_out[1],txoutclk_out[2],txoutclk_out[3],txoutclk_out[4],txoutclk_out[5],txoutclk_out[6],txoutclk_out[7]};                                      
+    assign GT_RXCOMMADET          = {rxcommadet_out[0],rxcommadet_out[1],rxcommadet_out[2],rxcommadet_out[3],rxcommadet_out[4],rxcommadet_out[5],rxcommadet_out[6],rxcommadet_out[7]}          ;   
+    assign GT_GTPOWERGOOD         = {gtpowergood_out[0],gtpowergood_out[1],gtpowergood_out[2],gtpowergood_out[3],gtpowergood_out[4],gtpowergood_out[5],gtpowergood_out[6],gtpowergood_out[7]}         ;                                      
+    assign GT_TXRESETDONE         = {txresetdone_out[0],txresetdone_out[1],txresetdone_out[2],txresetdone_out[3],txresetdone_out[4],txresetdone_out[5],txresetdone_out[6],txresetdone_out[7]}         ;                                      
+    assign GT_RXRESETDONE         = {rxresetdone_out[0],rxresetdone_out[1],rxresetdone_out[2],rxresetdone_out[3],rxresetdone_out[4],rxresetdone_out[5],rxresetdone_out[6],rxresetdone_out[7]}         ;                                      
+    assign GT_TXPHINITDONE        = {txphinitdone_out[0],txphinitdone_out[1],txphinitdone_out[2],txphinitdone_out[3],txphinitdone_out[4],txphinitdone_out[5],txphinitdone_out[6],txphinitdone_out[7]}        ;    
+    assign GT_TXPHALIGNDONE       = {txphaligndone_out[0],txphaligndone_out[1],txphaligndone_out[2],txphaligndone_out[3],txphaligndone_out[4],txphaligndone_out[5],txphaligndone_out[6],txphaligndone_out[7]};
+    assign GT_RXPMARESETDONE      = {rxpmaresetdone_out[0],rxpmaresetdone_out[1],rxpmaresetdone_out[2],rxpmaresetdone_out[3],rxpmaresetdone_out[4],rxpmaresetdone_out[5],rxpmaresetdone_out[6],rxpmaresetdone_out[7]}      ; 
+    assign GT_TXPROGDIVRESETDONE  = {txprgdivresetdone_out[0],txprgdivresetdone_out[1],txprgdivresetdone_out[2],txprgdivresetdone_out[3],txprgdivresetdone_out[4],txprgdivresetdone_out[5],txprgdivresetdone_out[6],txprgdivresetdone_out[7]}   ;                                      
 
-    assign GT_RXVALID             = rxvalid_out[0];
-    assign GT_RXPRBSERR           = rxprbserr_out[0];
-    assign GT_PHYSTATUS           = phystatus_out[0];
-    assign GT_RXCDRLOCK           = rxcdrlock_out[0];
-    assign pcierstidle_in         = GT_PCIERSTIDLE[0];
-    assign GT_RXELECIDLE          = rxelecidle_out[0];
-    assign GT_RXSYNCDONE          = rxsyncdone_out[0];
-    assign GT_PCIERATEIDLE        = pcierateidle_out[0];
-    assign GT_RXPRBSLOCKED        = rxprbslocked_out[0];
-    assign GT_PCIERATEGEN3        = pcierategen3_out[0];
-    assign GT_RXPHALIGNDONE       = rxphaligndone_out[0];
-    assign txprbsforceerr_in      = GT_TXPRBSFORCEERR[0];
-    assign txinhibit_in           = GT_TXINHIBIT[0];
-    assign rxprbscntreset_in      = GT_RXPRBSCNTRESET[0];
-    assign GT_TXDLYSRESETDONE     = txdlysresetdone_out[0];
-    assign GT_RXDLYSRESETDONE     = rxdlysresetdone_out[0];
-    assign GT_PCIEUSERGEN3RDY     = pcieusergen3rdy_out[0];
-    assign pcieuserratedone_in    = GT_PCIEUSERRATEDONE[0];
-    assign GT_PCIEUSERRATESTART   = pcieuserratestart_out[0];
-    assign GT_EYESCANDATAERROR    = eyescandataerror_out[0];
-    assign pciersttxsyncstart_in  = GT_PCIERSTTXSYNCSTART[0];
-    assign GT_PCIESYNCTXSYNCDONE  = pciesynctxsyncdone_out[0];
-    assign pcieeqrxeqadaptdone_in = GT_PCIEEQRXEQADAPTDONE[0];
-    assign GT_PCIEUSERPHYSTATUSRST= pcieuserphystatusrst_out[0];
+    assign GT_RXVALID             = {rxvalid_out[0],rxvalid_out[1],rxvalid_out[2],rxvalid_out[3],rxvalid_out[4],rxvalid_out[5],rxvalid_out[6],rxvalid_out[7]};
+    assign GT_RXPRBSERR           = {rxprbserr_out[0],rxprbserr_out[1],rxprbserr_out[2],rxprbserr_out[3],rxprbserr_out[4],rxprbserr_out[5],rxprbserr_out[6],rxprbserr_out[7]};                                      
+    assign GT_PHYSTATUS           = {phystatus_out[0],phystatus_out[1],phystatus_out[2],phystatus_out[3],phystatus_out[4],phystatus_out[5],phystatus_out[6],phystatus_out[7]};                                      
+    assign GT_RXCDRLOCK           = {rxcdrlock_out[0],rxcdrlock_out[1],rxcdrlock_out[2],rxcdrlock_out[3],rxcdrlock_out[4],rxcdrlock_out[5],rxcdrlock_out[6],rxcdrlock_out[7]};                                                                                               
+    assign pcierstidle_in         = {GT_PCIERSTIDLE[0],GT_PCIERSTIDLE[1],GT_PCIERSTIDLE[2],GT_PCIERSTIDLE[3],GT_PCIERSTIDLE[4],GT_PCIERSTIDLE[5],GT_PCIERSTIDLE[6],GT_PCIERSTIDLE[7]};
+    assign GT_RXELECIDLE          = {rxelecidle_out[0],rxelecidle_out[1],rxelecidle_out[2],rxelecidle_out[3],rxelecidle_out[4],rxelecidle_out[5],rxelecidle_out[6],rxelecidle_out[7]};                                      
+    assign GT_RXSYNCDONE          = {rxsyncdone_out[0],rxsyncdone_out[1],rxsyncdone_out[2],rxsyncdone_out[3],rxsyncdone_out[4],rxsyncdone_out[5],rxsyncdone_out[6],rxsyncdone_out[7]};           
+    assign GT_PCIERATEIDLE        = {pcierateidle_out[0],pcierateidle_out[1],pcierateidle_out[2],pcierateidle_out[3],pcierateidle_out[4],pcierateidle_out[5],pcierateidle_out[6],pcierateidle_out[7]};                                      
+    assign GT_RXPRBSLOCKED        = {rxprbslocked_out[0],rxprbslocked_out[1],rxprbslocked_out[2],rxprbslocked_out[3],rxprbslocked_out[4],rxprbslocked_out[5],rxprbslocked_out[6],rxprbslocked_out[7]};                                      
+    assign GT_PCIERATEGEN3        = {pcierategen3_out[0],pcierategen3_out[1],pcierategen3_out[2],pcierategen3_out[3],pcierategen3_out[4],pcierategen3_out[5],pcierategen3_out[6],pcierategen3_out[7]};
+    assign GT_RXPHALIGNDONE       = {rxphaligndone_out[0],rxphaligndone_out[1],rxphaligndone_out[2],rxphaligndone_out[3],rxphaligndone_out[4],rxphaligndone_out[5],rxphaligndone_out[6],rxphaligndone_out[7]};          
+    assign txprbsforceerr_in      = {GT_TXPRBSFORCEERR[0],GT_TXPRBSFORCEERR[1],GT_TXPRBSFORCEERR[2],GT_TXPRBSFORCEERR[3],GT_TXPRBSFORCEERR[4],GT_TXPRBSFORCEERR[5],GT_TXPRBSFORCEERR[6],GT_TXPRBSFORCEERR[7]};
+    assign txinhibit_in           = {GT_TXINHIBIT[0],GT_TXINHIBIT[1],GT_TXINHIBIT[2],GT_TXINHIBIT[3],GT_TXINHIBIT[4],GT_TXINHIBIT[5],GT_TXINHIBIT[6],GT_TXINHIBIT[7]};
+    assign rxprbscntreset_in      = {GT_RXPRBSCNTRESET[0],GT_RXPRBSCNTRESET[1],GT_RXPRBSCNTRESET[2],GT_RXPRBSCNTRESET[3],GT_RXPRBSCNTRESET[4],GT_RXPRBSCNTRESET[5],GT_RXPRBSCNTRESET[6],GT_RXPRBSCNTRESET[7]};
+    assign GT_TXDLYSRESETDONE     = {txdlysresetdone_out[0],txdlysresetdone_out[1],txdlysresetdone_out[2],txdlysresetdone_out[3],txdlysresetdone_out[4],txdlysresetdone_out[5],txdlysresetdone_out[6],txdlysresetdone_out[7]};  
+    assign GT_RXDLYSRESETDONE     = {rxdlysresetdone_out[0],rxdlysresetdone_out[1],rxdlysresetdone_out[2],rxdlysresetdone_out[3],rxdlysresetdone_out[4],rxdlysresetdone_out[5],rxdlysresetdone_out[6],rxdlysresetdone_out[7]};
+    assign GT_PCIEUSERGEN3RDY     = {pcieusergen3rdy_out[0],pcieusergen3rdy_out[1],pcieusergen3rdy_out[2],pcieusergen3rdy_out[3],pcieusergen3rdy_out[4],pcieusergen3rdy_out[5],pcieusergen3rdy_out[6],pcieusergen3rdy_out[7]};                                      
+    assign pcieuserratedone_in    = {GT_PCIEUSERRATEDONE[0],GT_PCIEUSERRATEDONE[1],GT_PCIEUSERRATEDONE[2],GT_PCIEUSERRATEDONE[3],GT_PCIEUSERRATEDONE[4],GT_PCIEUSERRATEDONE[5],GT_PCIEUSERRATEDONE[6],GT_PCIEUSERRATEDONE[7]};
+    assign GT_PCIEUSERRATESTART   = {pcieuserratestart_out[0],pcieuserratestart_out[1],pcieuserratestart_out[2],pcieuserratestart_out[3],pcieuserratestart_out[4],pcieuserratestart_out[5],pcieuserratestart_out[6],pcieuserratestart_out[7]};                                      
+    assign GT_EYESCANDATAERROR    = {eyescandataerror_out[0],eyescandataerror_out[1],eyescandataerror_out[2],eyescandataerror_out[3],eyescandataerror_out[4],eyescandataerror_out[5],eyescandataerror_out[6],eyescandataerror_out[7]};            
+    assign pciersttxsyncstart_in  = {GT_PCIERSTTXSYNCSTART[0],GT_PCIERSTTXSYNCSTART[1],GT_PCIERSTTXSYNCSTART[2],GT_PCIERSTTXSYNCSTART[3],GT_PCIERSTTXSYNCSTART[4],GT_PCIERSTTXSYNCSTART[5],GT_PCIERSTTXSYNCSTART[6],GT_PCIERSTTXSYNCSTART[7]};
+    assign GT_PCIESYNCTXSYNCDONE  = {pciesynctxsyncdone_out[0],pciesynctxsyncdone_out[1],pciesynctxsyncdone_out[2],pciesynctxsyncdone_out[3],pciesynctxsyncdone_out[4],pciesynctxsyncdone_out[5],pciesynctxsyncdone_out[6],pciesynctxsyncdone_out[7]};                                      
+    assign pcieeqrxeqadaptdone_in = {GT_PCIEEQRXEQADAPTDONE[0],GT_PCIEEQRXEQADAPTDONE[1],GT_PCIEEQRXEQADAPTDONE[2],GT_PCIEEQRXEQADAPTDONE[3],GT_PCIEEQRXEQADAPTDONE[4],GT_PCIEEQRXEQADAPTDONE[5],GT_PCIEEQRXEQADAPTDONE[6],GT_PCIEEQRXEQADAPTDONE[7]};
+    assign GT_PCIEUSERPHYSTATUSRST= {pcieuserphystatusrst_out[0],pcieuserphystatusrst_out[1],pcieuserphystatusrst_out[2],pcieuserphystatusrst_out[3],pcieuserphystatusrst_out[4],pcieuserphystatusrst_out[5],pcieuserphystatusrst_out[6],pcieuserphystatusrst_out[7]};                                      
 
-    assign GT_BUFGTCE             = bufgtce_out[0];
-    assign loopback_in            = GT_LOOPBACK[2:0];
-    assign txmargin_in            = GT_TXMARGIN[2:0];
-    assign txoutclksel_in         = GT_TXOUTCLKSEL[2:0];
-    assign GT_RXSTATUS            = rxstatus_out[2:0];
-    assign GT_BUFGTRESET          = bufgtreset_out[0];
-    assign GT_RXBUFSTATUS         = rxbufstatus_out[2:0];
-    assign GT_BUFGTCEMASK         = bufgtcemask_out[2:0];
-    assign GT_BUFGTRSTMASK        = bufgtrstmask_out[2:0];
+    assign GT_BUFGTCE             = {bufgtce_out[0],bufgtce_out[1],bufgtce_out[2],bufgtce_out[3],bufgtce_out[4],bufgtce_out[5],bufgtce_out[6],bufgtce_out[7]};                                          
+    assign loopback_in            = {GT_LOOPBACK[2:0],GT_LOOPBACK[5:3],GT_LOOPBACK[8:6],GT_LOOPBACK[11:9],GT_LOOPBACK[14:12],GT_LOOPBACK[17:15],GT_LOOPBACK[20:18],GT_LOOPBACK[23:21]};
+    assign txmargin_in            = {GT_TXMARGIN[2:0],GT_TXMARGIN[5:3],GT_TXMARGIN[8:6],GT_TXMARGIN[11:9],GT_TXMARGIN[14:12],GT_TXMARGIN[17:15],GT_TXMARGIN[20:18],GT_TXMARGIN[23:21]};
+    assign txoutclksel_in         = {GT_TXOUTCLKSEL[2:0],GT_TXOUTCLKSEL[5:3],GT_TXOUTCLKSEL[8:6],GT_TXOUTCLKSEL[11:9],GT_TXOUTCLKSEL[14:12],GT_TXOUTCLKSEL[17:15],GT_TXOUTCLKSEL[20:18],GT_TXOUTCLKSEL[23:21]};
+    assign GT_RXSTATUS            = {rxstatus_out[2:0],rxstatus_out[5:3],rxstatus_out[8:6],rxstatus_out[11:9],rxstatus_out[14:12],rxstatus_out[17:15],rxstatus_out[20:18],rxstatus_out[23:21]};                                      
+    assign GT_BUFGTRESET          = {bufgtreset_out[0],bufgtreset_out[1],bufgtreset_out[2],bufgtreset_out[3],bufgtreset_out[4],bufgtreset_out[5],bufgtreset_out[6],bufgtreset_out[7]};                                      
+    assign GT_RXBUFSTATUS         = {rxbufstatus_out[2:0],rxbufstatus_out[5:3],rxbufstatus_out[8:6],rxbufstatus_out[11:9],rxbufstatus_out[14:12],rxbufstatus_out[17:15],rxbufstatus_out[20:18],rxbufstatus_out[23:21]};                                                    
+    assign GT_BUFGTCEMASK         = {bufgtcemask_out[2:0],bufgtcemask_out[5:3],bufgtcemask_out[8:6],bufgtcemask_out[11:9],bufgtcemask_out[14:12],bufgtcemask_out[17:15],bufgtcemask_out[20:18],bufgtcemask_out[23:21]};                                      
+    assign GT_BUFGTRSTMASK        = {bufgtrstmask_out[2:0],bufgtrstmask_out[5:3],bufgtrstmask_out[8:6],bufgtrstmask_out[11:9],bufgtrstmask_out[14:12],bufgtrstmask_out[17:15],bufgtrstmask_out[20:18],bufgtrstmask_out[23:21]};                                      
 
-    assign rxpd_in                = GT_POWERDOWN[1:0];
-    assign txpd_in                = GT_POWERDOWN[1:0];
+    assign rxpd_in                = {GT_POWERDOWN[1:0],GT_POWERDOWN[3:2],GT_POWERDOWN[5:4],GT_POWERDOWN[7:6],GT_POWERDOWN[9:8],GT_POWERDOWN[11:10],GT_POWERDOWN[13:12],GT_POWERDOWN[15:14]};
+    assign txpd_in                = {GT_POWERDOWN[1:0],GT_POWERDOWN[3:2],GT_POWERDOWN[5:4],GT_POWERDOWN[7:6],GT_POWERDOWN[9:8],GT_POWERDOWN[11:10],GT_POWERDOWN[13:12],GT_POWERDOWN[15:14]};
 
-    assign rxprbssel_in           = GT_PRBSSEL[3:0];
-    assign txprbssel_in           = GT_PRBSSEL[3:0];
-    assign txprecursor_in         = GT_TXPRECURSOR[4:0];
-    assign txpostcursor_in        = GT_TXPOSTCURSOR[4:0];
-    assign txmaincursor_in        = GT_TXMAINCURSOR[6:0];
+    assign rxprbssel_in           = {GT_PRBSSEL[3:0],GT_PRBSSEL[7:4],GT_PRBSSEL[11:8],GT_PRBSSEL[15:12],GT_PRBSSEL[19:16],GT_PRBSSEL[23:20],GT_PRBSSEL[27:24],GT_PRBSSEL[31:28]};
+    assign txprbssel_in           = {GT_PRBSSEL[3:0],GT_PRBSSEL[7:4],GT_PRBSSEL[11:8],GT_PRBSSEL[15:12],GT_PRBSSEL[19:16],GT_PRBSSEL[23:20],GT_PRBSSEL[27:24],GT_PRBSSEL[31:28]};
+    assign txprecursor_in         = {GT_TXPRECURSOR[4:0],GT_TXPRECURSOR[9:5],GT_TXPRECURSOR[14:10],GT_TXPRECURSOR[19:15],GT_TXPRECURSOR[24:20],GT_TXPRECURSOR[29:25],GT_TXPRECURSOR[34:30],GT_TXPRECURSOR[39:35]};
+    assign txpostcursor_in        = {GT_TXPOSTCURSOR[4:0],GT_TXPOSTCURSOR[9:5],GT_TXPOSTCURSOR[14:10],GT_TXPOSTCURSOR[19:15],GT_TXPOSTCURSOR[24:20],GT_TXPOSTCURSOR[29:25],GT_TXPOSTCURSOR[34:30],GT_TXPOSTCURSOR[39:35]};
+    assign txmaincursor_in        = {GT_TXMAINCURSOR[6:0],GT_TXMAINCURSOR[13:7],GT_TXMAINCURSOR[20:14],GT_TXMAINCURSOR[27:21],GT_TXMAINCURSOR[34:28],GT_TXMAINCURSOR[41:35],GT_TXMAINCURSOR[48:42],GT_TXMAINCURSOR[55:49]};
 
-    assign GT_BUFGTDIV            = bufgtdiv_out[8:0];
+    assign GT_BUFGTDIV            = {bufgtdiv_out[8:0],bufgtdiv_out[17:9],bufgtdiv_out[26:18],bufgtdiv_out[35:27],bufgtdiv_out[44:36],bufgtdiv_out[53:45],bufgtdiv_out[62:54],bufgtdiv_out[71:63]};                                      
 
-    assign txdata_in[127:0]   = {64'd0,GT_TXDATA[63:0]};// Lane - 0 -to X0Y7                                        
+    assign txdata_in[1023:896]  = {64'd0,GT_TXDATA[63:0]};        // Lane - 0 -to X0Y7                                
+    assign txdata_in[895:768]   = {64'd0,GT_TXDATA[127:64]};                                        
+    assign txdata_in[767:640]   = {64'd0,GT_TXDATA[191:128]};                                        
+    assign txdata_in[639:512]   = {64'd0,GT_TXDATA[255:192]};                                        
+    assign txdata_in[511:384]   = {64'd0,GT_TXDATA[319:256]};                                        
+    assign txdata_in[383:256]   = {64'd0,GT_TXDATA[383:320]};                                        
+    assign txdata_in[255:128]   = {64'd0,GT_TXDATA[447:384]};                                        
+    assign txdata_in[127:0]     = {64'd0,GT_TXDATA[511:448]};                                        
                                                                              
-    assign txctrl2_in[7:0]     = {6'd0,GT_TXDATAK[1:0]};// Lane - 0 -to X0Y7
+    assign txctrl2_in[63:56]    = {6'd0,GT_TXDATAK[1:0]};        // Lane - 0 -to X0Y7
+    assign txctrl2_in[55:48]    = {6'd0,GT_TXDATAK[3:2]};
+    assign txctrl2_in[47:40]    = {6'd0,GT_TXDATAK[5:4]};
+    assign txctrl2_in[39:32]    = {6'd0,GT_TXDATAK[7:6]};
+    assign txctrl2_in[31:24]    = {6'd0,GT_TXDATAK[9:8]};
+    assign txctrl2_in[23:16]    = {6'd0,GT_TXDATAK[11:10]};
+    assign txctrl2_in[15:8]     = {6'd0,GT_TXDATAK[13:12]};
+    assign txctrl2_in[7:0]      = {6'd0,GT_TXDATAK[15:14]};
    
-    assign txctrl0_in[15:0]    = {10'd0,GT_TXSYNC_HEADER[1:0],GT_TXSTART_BLOCK[0],GT_TXDATA_VALID[0],2'd0};// Lane - 0 -to X0Y7                                      
+    assign txctrl0_in[127:112]  = {10'd0,GT_TXSYNC_HEADER[1:0],GT_TXSTART_BLOCK[0],GT_TXDATA_VALID[0],2'd0};     // Lane - 0 -to X0Y7                                    
+    assign txctrl0_in[111:96]   = {10'd0,GT_TXSYNC_HEADER[3:2],GT_TXSTART_BLOCK[1],GT_TXDATA_VALID[1],2'd0};                                      
+    assign txctrl0_in[95:80]    = {10'd0,GT_TXSYNC_HEADER[5:4],GT_TXSTART_BLOCK[2],GT_TXDATA_VALID[2],2'd0};                                      
+    assign txctrl0_in[79:64]    = {10'd0,GT_TXSYNC_HEADER[7:6],GT_TXSTART_BLOCK[3],GT_TXDATA_VALID[3],2'd0};                                      
+    assign txctrl0_in[63:48]    = {10'd0,GT_TXSYNC_HEADER[9:8],GT_TXSTART_BLOCK[4],GT_TXDATA_VALID[4],2'd0};                                      
+    assign txctrl0_in[47:32]    = {10'd0,GT_TXSYNC_HEADER[11:10],GT_TXSTART_BLOCK[5],GT_TXDATA_VALID[5],2'd0};                                      
+    assign txctrl0_in[31:16]    = {10'd0,GT_TXSYNC_HEADER[13:12],GT_TXSTART_BLOCK[6],GT_TXDATA_VALID[6],2'd0};                                      
+    assign txctrl0_in[15:0]     = {10'd0,GT_TXSYNC_HEADER[15:14],GT_TXSTART_BLOCK[7],GT_TXDATA_VALID[7],2'd0};                                      
     
-    assign txctrl1_in[15:0]    = {15'd0,GT_TXCOMPLIANCE[0]};// Lane - 0 -to X0Y7                            
+    assign txctrl1_in[127:112]  = {15'd0,GT_TXCOMPLIANCE[0]};                  // Lane - 0 -to X0Y7                    
+    assign txctrl1_in[111:96]   = {15'd0,GT_TXCOMPLIANCE[1]};                            
+    assign txctrl1_in[95:80]    = {15'd0,GT_TXCOMPLIANCE[2]};                            
+    assign txctrl1_in[79:64]    = {15'd0,GT_TXCOMPLIANCE[3]};                            
+    assign txctrl1_in[63:48]    = {15'd0,GT_TXCOMPLIANCE[4]};                            
+    assign txctrl1_in[47:32]    = {15'd0,GT_TXCOMPLIANCE[5]};                            
+    assign txctrl1_in[31:16]    = {15'd0,GT_TXCOMPLIANCE[6]};                            
+    assign txctrl1_in[15:0]     = {15'd0,GT_TXCOMPLIANCE[7]};                            
                                                                                           
-    assign GT_RXDATA[63:0]    = rxdata_out[63:0];// Lane - 0 -to X0Y7
+    assign GT_RXDATA[511:448]  = rxdata_out[63:0];             
+    assign GT_RXDATA[447:384]  = rxdata_out[191:128];  
+    assign GT_RXDATA[383:320]  = rxdata_out[319:256];  
+    assign GT_RXDATA[319:256]  = rxdata_out[447:384];  
+    assign GT_RXDATA[255:192]  = rxdata_out[575:512];  
+    assign GT_RXDATA[191:128]  = rxdata_out[703:640];  
+    assign GT_RXDATA[127:64]   = rxdata_out[831:768];  
+    assign GT_RXDATA[63:0]     = rxdata_out[959:896];    // Lane - 0 -to X0Y7 
 
-    assign GT_RXDATAK[1:0]       = rxctrl0_out[1:0];// Lane - 0 -to X0Y7
-    assign GT_RXDATA_VALID[0]    = rxctrl0_out[2];// Lane - 0 -to X0Y7
-    assign GT_RXSYNC_HEADER[1:0] = rxctrl0_out[5:4];// Lane - 0 -to X0Y7
-    assign GT_RXSTART_BLOCK[1:0] = {rxctrl0_out[6],rxctrl0_out[3]};// Lane - 0 -to X0Y7
-    assign GT_GEN34_EIOS_DET     = rxctrl0_out[7]; 
+    assign GT_RXDATAK[15:14]   = rxctrl0_out[1:0];           
+    assign GT_RXDATAK[13:12]   = rxctrl0_out[17:16];
+    assign GT_RXDATAK[11:10]   = rxctrl0_out[33:32];
+    assign GT_RXDATAK[9:8]     = rxctrl0_out[49:48];
+    assign GT_RXDATAK[7:6]     = rxctrl0_out[65:64];
+    assign GT_RXDATAK[5:4]     = rxctrl0_out[81:80];
+    assign GT_RXDATAK[3:2]     = rxctrl0_out[97:96];
+    assign GT_RXDATAK[1:0]     = rxctrl0_out[113:112];  // Lane - 0 -to X0Y7 
+
+    assign GT_RXDATA_VALID[7]  = rxctrl0_out[2];           
+    assign GT_RXDATA_VALID[6]  = rxctrl0_out[18];
+    assign GT_RXDATA_VALID[5]  = rxctrl0_out[34];
+    assign GT_RXDATA_VALID[4]  = rxctrl0_out[50];
+    assign GT_RXDATA_VALID[3]  = rxctrl0_out[66];
+    assign GT_RXDATA_VALID[2]  = rxctrl0_out[82];
+    assign GT_RXDATA_VALID[1]  = rxctrl0_out[98];
+    assign GT_RXDATA_VALID[0]  = rxctrl0_out[114];   // Lane - 0 -to X0Y7 
+
+    assign GT_RXSTART_BLOCK[15:14] = {rxctrl0_out[6],rxctrl0_out[3]}; 
+    assign GT_RXSTART_BLOCK[13:12] = {rxctrl0_out[22],rxctrl0_out[19]};
+    assign GT_RXSTART_BLOCK[11:10] = {rxctrl0_out[38],rxctrl0_out[35]};
+    assign GT_RXSTART_BLOCK[9:8]   = {rxctrl0_out[54],rxctrl0_out[51]};
+    assign GT_RXSTART_BLOCK[7:6]   = {rxctrl0_out[70],rxctrl0_out[67]};
+    assign GT_RXSTART_BLOCK[5:4]   = {rxctrl0_out[86],rxctrl0_out[83]};
+    assign GT_RXSTART_BLOCK[3:2]   = {rxctrl0_out[102],rxctrl0_out[99]};
+    assign GT_RXSTART_BLOCK[1:0]   = {rxctrl0_out[118],rxctrl0_out[115]}; // Lane - 0 -to X0Y7
+
+    assign GT_GEN34_EIOS_DET[7:0]= {rxctrl0_out[7],rxctrl0_out[23],rxctrl0_out[39],rxctrl0_out[55],rxctrl0_out[71],rxctrl0_out[87],rxctrl0_out[103],rxctrl0_out[119]}; 
+
+    assign GT_RXSYNC_HEADER[15:14] = rxctrl0_out[5:4];           
+    assign GT_RXSYNC_HEADER[13:12] = rxctrl0_out[21:20];
+    assign GT_RXSYNC_HEADER[11:10] = rxctrl0_out[37:36];
+    assign GT_RXSYNC_HEADER[9:8]   = rxctrl0_out[53:52];
+    assign GT_RXSYNC_HEADER[7:6]   = rxctrl0_out[69:68];
+    assign GT_RXSYNC_HEADER[5:4]   = rxctrl0_out[85:84];
+    assign GT_RXSYNC_HEADER[3:2]   = rxctrl0_out[101:100];
+    assign GT_RXSYNC_HEADER[1:0]   = rxctrl0_out[117:116]; // Lane - 0 -to X0Y7 
 
     //----------------------------------------------------------------------------------------------
     //  PHY Quad - Generate one Quad for every four Lanes
@@ -966,18 +1033,24 @@ endgenerate
     //  * QPLL reset and powerdown for Quad 1 driven by       Master Lane 0
     //  * QPLL reset and powerdown for Quad 2 driven by Local Master Lane 4
     //----------------------------------------------------------------------        
-    assign qpll0pd_in[0]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[0]);     // Quad-X0Y1 - 0
-    assign qpll0reset_in[0] = (GTCOM_QPLLRESET || pcierateqpllreset_out[0]);  // Quad-X0Y1 - 0
+    assign qpll0pd_in[0]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[8]);     // Quad-X0Y0 - 1
+    assign qpll0reset_in[0] = (GTCOM_QPLLRESET || pcierateqpllreset_out[8]);  // Quad-X0Y0 - 1
+    assign qpll0pd_in[1]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[0]);     // Quad-X0Y1 - 0
+    assign qpll0reset_in[1] = (GTCOM_QPLLRESET || pcierateqpllreset_out[0]);  // Quad-X0Y1 - 0
 
-    assign qpll1pd_in[0]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[0]);     // Quad-X0Y1 - 0
-    assign qpll1reset_in[0] = (GTCOM_QPLLRESET || pcierateqpllreset_out[0]);  // Quad-X0Y1 - 0
+    assign qpll1pd_in[0]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[9]);     // Quad-X0Y0 - 1
+    assign qpll1reset_in[0] = (GTCOM_QPLLRESET || pcierateqpllreset_out[9]);  // Quad-X0Y0 - 1
+    assign qpll1pd_in[1]    = (GTCOM_QPLLPD    || pcierateqpllpd_out[1]);     // Quad-X0Y1 - 0
+    assign qpll1reset_in[1] = (GTCOM_QPLLRESET || pcierateqpllreset_out[1]);  // Quad-X0Y1 - 0
              
-    assign qpllrsvd2_3     = {2'd0,1'd1, GT_RATE[1:0]};   // From [TX/RX]RATE port
-    assign rcalenb_in[0]   = GTCOM_RCALENB;
+    assign qpllrsvd2_3     = {{2'd0,1'd1, GT_RATE[1:0]},{2'd0,1'd1, GT_RATE[1:0]}};   // From [TX/RX]RATE port
+    assign rcalenb_in[0] = GTCOM_RCALENB;
+    assign rcalenb_in[1] = GTCOM_RCALENB;
     //----------------------------------------------------------------------        
-    assign GT_CPLLLOCK          = cplllock_out[0];
-    assign GT_PCIERATEQPLLPD    = pcierateqpllpd_out[1:0];
-    assign GT_PCIERATEQPLLRESET = pcierateqpllreset_out[1:0];
+    assign GT_CPLLLOCK          = {cplllock_out[0],cplllock_out[1],cplllock_out[2],cplllock_out[3],cplllock_out[4],cplllock_out[5],cplllock_out[6],cplllock_out[7]};
+    assign GT_PCIERATEQPLLPD    = {pcierateqpllpd_out[1:0],pcierateqpllpd_out[3:2],pcierateqpllpd_out[5:4],pcierateqpllpd_out[7:6],pcierateqpllpd_out[9:8],pcierateqpllpd_out[11:10],pcierateqpllpd_out[13:12],pcierateqpllpd_out[15:14]};              
+    assign GT_PCIERATEQPLLRESET = {pcierateqpllreset_out[1:0],pcierateqpllreset_out[3:2],pcierateqpllreset_out[5:4],pcierateqpllreset_out[7:6],pcierateqpllreset_out[9:8],pcierateqpllreset_out[11:10],pcierateqpllreset_out[13:12],pcierateqpllreset_out[15:14]};    
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     assign GTCOM_QPLL0LOCK      = qpll0lock_out;
     assign GTCOM_QPLL0OUTCLK    = qpll0outclk_out;

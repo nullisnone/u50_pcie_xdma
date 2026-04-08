@@ -3,8 +3,8 @@ module fpga_top (
     output wire       o_led0,
     input  wire       i_pcie_rstn,
     input  wire       i_pcie_refclkp, i_pcie_refclkn,
-    input  wire [0:0] i_pcie_rxp, i_pcie_rxn,
-    output wire [0:0] o_pcie_txp, o_pcie_txn,
+    input  wire [7:0] i_pcie_rxp, i_pcie_rxn,
+    output wire [7:0] o_pcie_txp, o_pcie_txn,
     output wire       HBM_CATTRIP
 );
 
@@ -13,7 +13,7 @@ assign HBM_CATTRIP = 1'b0;
 
 localparam AXI_IDWIDTH = 4;
 localparam AXI_AWIDTH  = 64;
-localparam AXI_DWIDTH  = 64;
+localparam AXI_DWIDTH  = 256;
 
 
 wire  pcie_rstn;
@@ -28,6 +28,7 @@ wire  clk;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PCIe XDMA's AXI interface
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// AXI Master Write Address Channel
 wire                      axi_awready;
 wire                      axi_awvalid;
 wire [    AXI_AWIDTH-1:0] axi_awaddr;

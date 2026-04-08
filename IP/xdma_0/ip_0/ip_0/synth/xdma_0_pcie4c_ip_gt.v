@@ -52,11 +52,11 @@
 
 (* X_CORE_INFO = "xdma_0_pcie4c_ip_gt_gtwizard_top,Vivado 2022.2" *)
 (* CHECK_LICENSE_TYPE = "xdma_0_pcie4c_ip_gt,xdma_0_pcie4c_ip_gt_gtwizard_top,{}" *)
-(* CORE_GENERATION_INFO = "xdma_0_pcie4c_ip_gt,xdma_0_pcie4c_ip_gt_gtwizard_top,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=gtwizard_ultrascale,x_ipVersion=1.7,x_ipCoreRevision=14,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_CHANNEL_ENABLE=000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,C_PCIE_ENABLE=1,C_PCIE_CORECLK_FREQ=250,C_COMMON_SCALING_FACTOR=1\
+(* CORE_GENERATION_INFO = "xdma_0_pcie4c_ip_gt,xdma_0_pcie4c_ip_gt_gtwizard_top,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=gtwizard_ultrascale,x_ipVersion=1.7,x_ipCoreRevision=14,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_CHANNEL_ENABLE=000000000000000000000000000000000000000000000000000000000000000000000000000000001111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,C_PCIE_ENABLE=1,C_PCIE_CORECLK_FREQ=500,C_COMMON_SCALING_FACTOR=2\
 ,C_CPLL_VCO_FREQUENCY=2500.0,C_FORCE_COMMONS=0,C_FREERUN_FREQUENCY=100,C_GT_TYPE=3,C_GT_REV=67,C_INCLUDE_CPLL_CAL=1,C_ENABLE_COMMON_USRCLK=0,C_USER_GTPOWERGOOD_DELAY_EN=1,C_SIM_CPLL_CAL_BYPASS=1,C_LOCATE_COMMON=0,C_LOCATE_RESET_CONTROLLER=1,C_LOCATE_USER_DATA_WIDTH_SIZING=1,C_LOCATE_RX_BUFFER_BYPASS_CONTROLLER=0,C_LOCATE_IN_SYSTEM_IBERT_CORE=2,C_LOCATE_RX_USER_CLOCKING=1,C_LOCATE_TX_BUFFER_BYPASS_CONTROLLER=1,C_LOCATE_TX_USER_CLOCKING=1,C_RESET_CONTROLLER_INSTANCE_CTRL=0,C_RX_BUFFBYPASS_MODE=0,C\
-_RX_BUFFER_BYPASS_INSTANCE_CTRL=0,C_RX_BUFFER_MODE=1,C_RX_CB_DISP=00000000,C_RX_CB_K=00000000,C_RX_CB_MAX_LEVEL=1,C_RX_CB_LEN_SEQ=1,C_RX_CB_NUM_SEQ=0,C_RX_CB_VAL=00000000000000000000000000000000000000000000000000000000000000000000000000000000,C_RX_CC_DISP=00000000,C_RX_CC_ENABLE=1,C_RESET_SEQUENCE_INTERVAL=0,C_RX_CC_K=00000001,C_RX_CC_LEN_SEQ=1,C_RX_CC_NUM_SEQ=1,C_RX_CC_PERIODICITY=5000,C_RX_CC_VAL=00000000000000000000000000000000000000000000000000000000000000000000000000011100,C_RX_COMMA_M_ENAB\
+_RX_BUFFER_BYPASS_INSTANCE_CTRL=0,C_RX_BUFFER_MODE=1,C_RX_CB_DISP=00000000,C_RX_CB_K=00000000,C_RX_CB_MAX_LEVEL=4,C_RX_CB_LEN_SEQ=1,C_RX_CB_NUM_SEQ=0,C_RX_CB_VAL=00000000000000000000000000000000000000000000000000000000000000000000000000000000,C_RX_CC_DISP=00000000,C_RX_CC_ENABLE=1,C_RESET_SEQUENCE_INTERVAL=0,C_RX_CC_K=00000001,C_RX_CC_LEN_SEQ=1,C_RX_CC_NUM_SEQ=1,C_RX_CC_PERIODICITY=5000,C_RX_CC_VAL=00000000000000000000000000000000000000000000000000000000000000000000000000011100,C_RX_COMMA_M_ENAB\
 LE=1,C_RX_COMMA_M_VAL=1010000011,C_RX_COMMA_P_ENABLE=1,C_RX_COMMA_P_VAL=0101111100,C_RX_DATA_DECODING=1,C_RX_ENABLE=1,C_RX_INT_DATA_WIDTH=20,C_RX_LINE_RATE=8,C_RX_MASTER_CHANNEL_IDX=111,C_RX_OUTCLK_BUFG_GT_DIV=1,C_RX_OUTCLK_FREQUENCY=400.0000000,C_RX_OUTCLK_SOURCE=1,C_RX_PLL_TYPE=1,C_RX_RECCLK_OUTPUT=0x000000000000000000000000000000000000000000000000,C_RX_REFCLK_FREQUENCY=100,C_RX_SLIDE_MODE=2,C_RX_USER_CLOCKING_CONTENTS=0,C_RX_USER_CLOCKING_INSTANCE_CTRL=0,C_RX_USER_CLOCKING_RATIO_FSRC_FUSRCLK=\
-1,C_RX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2=1,C_RX_USER_CLOCKING_SOURCE=0,C_RX_USER_DATA_WIDTH=16,C_RX_USRCLK_FREQUENCY=400.0000000,C_RX_USRCLK2_FREQUENCY=400.0000000,C_SECONDARY_QPLL_ENABLE=0,C_SECONDARY_QPLL_REFCLK_FREQUENCY=257.8125,C_TOTAL_NUM_CHANNELS=1,C_TOTAL_NUM_COMMONS=1,C_TOTAL_NUM_COMMONS_EXAMPLE=0,C_TXPROGDIV_FREQ_ENABLE=0,C_TXPROGDIV_FREQ_SOURCE=1,C_TXPROGDIV_FREQ_VAL=400,C_TX_BUFFBYPASS_MODE=0,C_TX_BUFFER_BYPASS_INSTANCE_CTRL=0,C_TX_BUFFER_MODE=0,C_TX_DATA_ENCODING=1,C_TX_ENABLE=1,\
+1,C_RX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2=1,C_RX_USER_CLOCKING_SOURCE=0,C_RX_USER_DATA_WIDTH=16,C_RX_USRCLK_FREQUENCY=400.0000000,C_RX_USRCLK2_FREQUENCY=400.0000000,C_SECONDARY_QPLL_ENABLE=0,C_SECONDARY_QPLL_REFCLK_FREQUENCY=257.8125,C_TOTAL_NUM_CHANNELS=8,C_TOTAL_NUM_COMMONS=2,C_TOTAL_NUM_COMMONS_EXAMPLE=0,C_TXPROGDIV_FREQ_ENABLE=0,C_TXPROGDIV_FREQ_SOURCE=1,C_TXPROGDIV_FREQ_VAL=400,C_TX_BUFFBYPASS_MODE=0,C_TX_BUFFER_BYPASS_INSTANCE_CTRL=0,C_TX_BUFFER_MODE=0,C_TX_DATA_ENCODING=1,C_TX_ENABLE=1,\
 C_TX_INT_DATA_WIDTH=20,C_TX_LINE_RATE=8,C_TX_MASTER_CHANNEL_IDX=111,C_TX_OUTCLK_BUFG_GT_DIV=1,C_TX_OUTCLK_FREQUENCY=400.0000000,C_TX_OUTCLK_SOURCE=4,C_TX_PLL_TYPE=1,C_TX_REFCLK_FREQUENCY=100,C_TX_USER_CLOCKING_CONTENTS=0,C_TX_USER_CLOCKING_INSTANCE_CTRL=0,C_TX_USER_CLOCKING_RATIO_FSRC_FUSRCLK=1,C_TX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2=1,C_TX_USER_CLOCKING_SOURCE=0,C_TX_USER_DATA_WIDTH=16,C_TX_USRCLK_FREQUENCY=400.0000000,C_TX_USRCLK2_FREQUENCY=400.0000000}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module xdma_0_pcie4c_ip_gt (
@@ -272,212 +272,212 @@ input wire [0 : 0] gtwiz_userclk_tx_active_in;
 input wire [0 : 0] gtwiz_userclk_rx_active_in;
 input wire [0 : 0] gtwiz_reset_tx_done_in;
 input wire [0 : 0] gtwiz_reset_rx_done_in;
-input wire [17 : 0] gtwiz_gtye4_cpll_cal_txoutclk_period_in;
-input wire [17 : 0] gtwiz_gtye4_cpll_cal_cnt_tol_in;
-input wire [0 : 0] gtwiz_gtye4_cpll_cal_bufg_ce_in;
-input wire [15 : 0] drpaddr_common_in;
-input wire [0 : 0] drpclk_common_in;
-input wire [15 : 0] drpdi_common_in;
-input wire [0 : 0] drpen_common_in;
-input wire [0 : 0] drpwe_common_in;
-input wire [0 : 0] gtrefclk00_in;
-input wire [0 : 0] gtrefclk01_in;
-input wire [2 : 0] pcierateqpll0_in;
-input wire [2 : 0] pcierateqpll1_in;
-input wire [0 : 0] qpll0pd_in;
-input wire [0 : 0] qpll0reset_in;
-input wire [0 : 0] qpll1pd_in;
-input wire [0 : 0] qpll1reset_in;
-input wire [0 : 0] rcalenb_in;
-output wire [15 : 0] drpdo_common_out;
-output wire [0 : 0] drprdy_common_out;
-output wire [0 : 0] qpll0lock_out;
-output wire [0 : 0] qpll0outclk_out;
-output wire [0 : 0] qpll0outrefclk_out;
-output wire [0 : 0] qpll1lock_out;
-output wire [0 : 0] qpll1outclk_out;
-output wire [0 : 0] qpll1outrefclk_out;
-input wire [0 : 0] cpllfreqlock_in;
-input wire [0 : 0] cpllpd_in;
-input wire [0 : 0] cpllreset_in;
-input wire [0 : 0] dmonfiforeset_in;
-input wire [0 : 0] dmonitorclk_in;
-input wire [9 : 0] drpaddr_in;
-input wire [0 : 0] drpclk_in;
-input wire [15 : 0] drpdi_in;
-input wire [0 : 0] drpen_in;
-input wire [0 : 0] drprst_in;
-input wire [0 : 0] drpwe_in;
-input wire [0 : 0] eyescanreset_in;
-input wire [0 : 0] gtrefclk0_in;
-input wire [0 : 0] gtrxreset_in;
-input wire [0 : 0] gttxreset_in;
-input wire [0 : 0] gtyrxn_in;
-input wire [0 : 0] gtyrxp_in;
-input wire [2 : 0] loopback_in;
-input wire [0 : 0] pcieeqrxeqadaptdone_in;
-input wire [0 : 0] pcierstidle_in;
-input wire [0 : 0] pciersttxsyncstart_in;
-input wire [0 : 0] pcieuserratedone_in;
-input wire [0 : 0] qpll0freqlock_in;
-input wire [0 : 0] qpll1freqlock_in;
-input wire [0 : 0] resetovrd_in;
-input wire [0 : 0] rx8b10ben_in;
-input wire [0 : 0] rxbufreset_in;
-input wire [0 : 0] rxcdrfreqreset_in;
-input wire [0 : 0] rxcdrhold_in;
-input wire [0 : 0] rxcdrreset_in;
-input wire [0 : 0] rxcommadeten_in;
-input wire [0 : 0] rxdfeagchold_in;
-input wire [0 : 0] rxdfecfokhold_in;
-input wire [0 : 0] rxdfekhhold_in;
-input wire [0 : 0] rxdfelfhold_in;
-input wire [0 : 0] rxdfelpmreset_in;
-input wire [0 : 0] rxdfetap10hold_in;
-input wire [0 : 0] rxdfetap11hold_in;
-input wire [0 : 0] rxdfetap12hold_in;
-input wire [0 : 0] rxdfetap13hold_in;
-input wire [0 : 0] rxdfetap14hold_in;
-input wire [0 : 0] rxdfetap15hold_in;
-input wire [0 : 0] rxdfetap2hold_in;
-input wire [0 : 0] rxdfetap3hold_in;
-input wire [0 : 0] rxdfetap4hold_in;
-input wire [0 : 0] rxdfetap5hold_in;
-input wire [0 : 0] rxdfetap6hold_in;
-input wire [0 : 0] rxdfetap7hold_in;
-input wire [0 : 0] rxdfetap8hold_in;
-input wire [0 : 0] rxdfetap9hold_in;
-input wire [0 : 0] rxdfeuthold_in;
-input wire [0 : 0] rxdfevphold_in;
-input wire [0 : 0] rxlpmen_in;
-input wire [0 : 0] rxlpmgchold_in;
-input wire [0 : 0] rxlpmhfhold_in;
-input wire [0 : 0] rxlpmlfhold_in;
-input wire [0 : 0] rxlpmoshold_in;
-input wire [0 : 0] rxmcommaalignen_in;
-input wire [0 : 0] rxoshold_in;
-input wire [0 : 0] rxpcommaalignen_in;
-input wire [0 : 0] rxpcsreset_in;
-input wire [1 : 0] rxpd_in;
-input wire [0 : 0] rxpmareset_in;
-input wire [0 : 0] rxpolarity_in;
-input wire [0 : 0] rxprbscntreset_in;
-input wire [3 : 0] rxprbssel_in;
-input wire [0 : 0] rxprogdivreset_in;
-input wire [2 : 0] rxrate_in;
-input wire [0 : 0] rxratemode_in;
-input wire [0 : 0] rxslide_in;
-input wire [0 : 0] rxtermination_in;
-input wire [0 : 0] rxuserrdy_in;
-input wire [0 : 0] rxusrclk_in;
-input wire [0 : 0] rxusrclk2_in;
-input wire [0 : 0] tx8b10ben_in;
-input wire [15 : 0] txctrl0_in;
-input wire [15 : 0] txctrl1_in;
-input wire [7 : 0] txctrl2_in;
-input wire [127 : 0] txdata_in;
-input wire [1 : 0] txdeemph_in;
-input wire [0 : 0] txdetectrx_in;
-input wire [4 : 0] txdiffctrl_in;
-input wire [0 : 0] txdlybypass_in;
-input wire [0 : 0] txdlyen_in;
-input wire [0 : 0] txdlyhold_in;
-input wire [0 : 0] txdlyovrden_in;
-input wire [0 : 0] txdlysreset_in;
-input wire [0 : 0] txdlyupdown_in;
-input wire [0 : 0] txelecidle_in;
-input wire [6 : 0] txmaincursor_in;
-input wire [2 : 0] txmargin_in;
-input wire [2 : 0] txoutclksel_in;
-input wire [0 : 0] txpcsreset_in;
-input wire [1 : 0] txpd_in;
-input wire [0 : 0] txpdelecidlemode_in;
-input wire [0 : 0] txphalign_in;
-input wire [0 : 0] txphalignen_in;
-input wire [0 : 0] txphdlypd_in;
-input wire [0 : 0] txphdlyreset_in;
-input wire [0 : 0] txphdlytstclk_in;
-input wire [0 : 0] txphinit_in;
-input wire [0 : 0] txphovrden_in;
-input wire [0 : 0] txpisopd_in;
-input wire [0 : 0] txpmareset_in;
-input wire [4 : 0] txpostcursor_in;
-input wire [0 : 0] txprbsforceerr_in;
-input wire [3 : 0] txprbssel_in;
-input wire [4 : 0] txprecursor_in;
-input wire [0 : 0] txprogdivreset_in;
-input wire [2 : 0] txrate_in;
-input wire [0 : 0] txswing_in;
-input wire [0 : 0] txsyncallin_in;
-input wire [0 : 0] txsyncin_in;
-input wire [0 : 0] txsyncmode_in;
-input wire [0 : 0] txuserrdy_in;
-input wire [0 : 0] txusrclk_in;
-input wire [0 : 0] txusrclk2_in;
-output wire [0 : 0] bufgtce_out;
-output wire [2 : 0] bufgtcemask_out;
-output wire [8 : 0] bufgtdiv_out;
-output wire [0 : 0] bufgtreset_out;
-output wire [2 : 0] bufgtrstmask_out;
-output wire [0 : 0] cplllock_out;
-output wire [15 : 0] dmonitorout_out;
-output wire [15 : 0] drpdo_out;
-output wire [0 : 0] drprdy_out;
-output wire [0 : 0] gtpowergood_out;
-output wire [0 : 0] gtytxn_out;
-output wire [0 : 0] gtytxp_out;
-output wire [0 : 0] pcierategen3_out;
-output wire [0 : 0] pcierateidle_out;
-output wire [1 : 0] pcierateqpllpd_out;
-output wire [1 : 0] pcierateqpllreset_out;
-output wire [0 : 0] pciesynctxsyncdone_out;
-output wire [0 : 0] pcieusergen3rdy_out;
-output wire [0 : 0] pcieuserphystatusrst_out;
-output wire [0 : 0] pcieuserratestart_out;
-output wire [0 : 0] phystatus_out;
-output wire [2 : 0] rxbufstatus_out;
-output wire [0 : 0] rxbyteisaligned_out;
-output wire [0 : 0] rxbyterealign_out;
-output wire [0 : 0] rxcdrlock_out;
-output wire [1 : 0] rxclkcorcnt_out;
-output wire [0 : 0] rxcommadet_out;
-output wire [15 : 0] rxctrl0_out;
-output wire [15 : 0] rxctrl1_out;
-output wire [7 : 0] rxctrl2_out;
-output wire [7 : 0] rxctrl3_out;
-output wire [127 : 0] rxdata_out;
-output wire [0 : 0] rxdlysresetdone_out;
-output wire [0 : 0] rxelecidle_out;
-output wire [0 : 0] rxoutclk_out;
-output wire [0 : 0] rxoutclkfabric_out;
-output wire [0 : 0] rxoutclkpcs_out;
-output wire [0 : 0] rxphaligndone_out;
-output wire [0 : 0] rxpmaresetdone_out;
-output wire [0 : 0] rxprbserr_out;
-output wire [0 : 0] rxprbslocked_out;
-output wire [0 : 0] rxratedone_out;
-output wire [0 : 0] rxrecclkout_out;
-output wire [0 : 0] rxresetdone_out;
-output wire [2 : 0] rxstatus_out;
-output wire [0 : 0] rxsyncdone_out;
-output wire [0 : 0] rxvalid_out;
-output wire [0 : 0] txdlysresetdone_out;
-output wire [0 : 0] txoutclk_out;
-output wire [0 : 0] txoutclkfabric_out;
-output wire [0 : 0] txoutclkpcs_out;
-output wire [0 : 0] txphaligndone_out;
-output wire [0 : 0] txphinitdone_out;
-output wire [0 : 0] txpmaresetdone_out;
-output wire [0 : 0] txprgdivresetdone_out;
-output wire [0 : 0] txresetdone_out;
-output wire [0 : 0] txsyncdone_out;
-output wire [0 : 0] txsyncout_out;
+input wire [143 : 0] gtwiz_gtye4_cpll_cal_txoutclk_period_in;
+input wire [143 : 0] gtwiz_gtye4_cpll_cal_cnt_tol_in;
+input wire [7 : 0] gtwiz_gtye4_cpll_cal_bufg_ce_in;
+input wire [31 : 0] drpaddr_common_in;
+input wire [1 : 0] drpclk_common_in;
+input wire [31 : 0] drpdi_common_in;
+input wire [1 : 0] drpen_common_in;
+input wire [1 : 0] drpwe_common_in;
+input wire [1 : 0] gtrefclk00_in;
+input wire [1 : 0] gtrefclk01_in;
+input wire [5 : 0] pcierateqpll0_in;
+input wire [5 : 0] pcierateqpll1_in;
+input wire [1 : 0] qpll0pd_in;
+input wire [1 : 0] qpll0reset_in;
+input wire [1 : 0] qpll1pd_in;
+input wire [1 : 0] qpll1reset_in;
+input wire [1 : 0] rcalenb_in;
+output wire [31 : 0] drpdo_common_out;
+output wire [1 : 0] drprdy_common_out;
+output wire [1 : 0] qpll0lock_out;
+output wire [1 : 0] qpll0outclk_out;
+output wire [1 : 0] qpll0outrefclk_out;
+output wire [1 : 0] qpll1lock_out;
+output wire [1 : 0] qpll1outclk_out;
+output wire [1 : 0] qpll1outrefclk_out;
+input wire [7 : 0] cpllfreqlock_in;
+input wire [7 : 0] cpllpd_in;
+input wire [7 : 0] cpllreset_in;
+input wire [7 : 0] dmonfiforeset_in;
+input wire [7 : 0] dmonitorclk_in;
+input wire [79 : 0] drpaddr_in;
+input wire [7 : 0] drpclk_in;
+input wire [127 : 0] drpdi_in;
+input wire [7 : 0] drpen_in;
+input wire [7 : 0] drprst_in;
+input wire [7 : 0] drpwe_in;
+input wire [7 : 0] eyescanreset_in;
+input wire [7 : 0] gtrefclk0_in;
+input wire [7 : 0] gtrxreset_in;
+input wire [7 : 0] gttxreset_in;
+input wire [7 : 0] gtyrxn_in;
+input wire [7 : 0] gtyrxp_in;
+input wire [23 : 0] loopback_in;
+input wire [7 : 0] pcieeqrxeqadaptdone_in;
+input wire [7 : 0] pcierstidle_in;
+input wire [7 : 0] pciersttxsyncstart_in;
+input wire [7 : 0] pcieuserratedone_in;
+input wire [7 : 0] qpll0freqlock_in;
+input wire [7 : 0] qpll1freqlock_in;
+input wire [7 : 0] resetovrd_in;
+input wire [7 : 0] rx8b10ben_in;
+input wire [7 : 0] rxbufreset_in;
+input wire [7 : 0] rxcdrfreqreset_in;
+input wire [7 : 0] rxcdrhold_in;
+input wire [7 : 0] rxcdrreset_in;
+input wire [7 : 0] rxcommadeten_in;
+input wire [7 : 0] rxdfeagchold_in;
+input wire [7 : 0] rxdfecfokhold_in;
+input wire [7 : 0] rxdfekhhold_in;
+input wire [7 : 0] rxdfelfhold_in;
+input wire [7 : 0] rxdfelpmreset_in;
+input wire [7 : 0] rxdfetap10hold_in;
+input wire [7 : 0] rxdfetap11hold_in;
+input wire [7 : 0] rxdfetap12hold_in;
+input wire [7 : 0] rxdfetap13hold_in;
+input wire [7 : 0] rxdfetap14hold_in;
+input wire [7 : 0] rxdfetap15hold_in;
+input wire [7 : 0] rxdfetap2hold_in;
+input wire [7 : 0] rxdfetap3hold_in;
+input wire [7 : 0] rxdfetap4hold_in;
+input wire [7 : 0] rxdfetap5hold_in;
+input wire [7 : 0] rxdfetap6hold_in;
+input wire [7 : 0] rxdfetap7hold_in;
+input wire [7 : 0] rxdfetap8hold_in;
+input wire [7 : 0] rxdfetap9hold_in;
+input wire [7 : 0] rxdfeuthold_in;
+input wire [7 : 0] rxdfevphold_in;
+input wire [7 : 0] rxlpmen_in;
+input wire [7 : 0] rxlpmgchold_in;
+input wire [7 : 0] rxlpmhfhold_in;
+input wire [7 : 0] rxlpmlfhold_in;
+input wire [7 : 0] rxlpmoshold_in;
+input wire [7 : 0] rxmcommaalignen_in;
+input wire [7 : 0] rxoshold_in;
+input wire [7 : 0] rxpcommaalignen_in;
+input wire [7 : 0] rxpcsreset_in;
+input wire [15 : 0] rxpd_in;
+input wire [7 : 0] rxpmareset_in;
+input wire [7 : 0] rxpolarity_in;
+input wire [7 : 0] rxprbscntreset_in;
+input wire [31 : 0] rxprbssel_in;
+input wire [7 : 0] rxprogdivreset_in;
+input wire [23 : 0] rxrate_in;
+input wire [7 : 0] rxratemode_in;
+input wire [7 : 0] rxslide_in;
+input wire [7 : 0] rxtermination_in;
+input wire [7 : 0] rxuserrdy_in;
+input wire [7 : 0] rxusrclk_in;
+input wire [7 : 0] rxusrclk2_in;
+input wire [7 : 0] tx8b10ben_in;
+input wire [127 : 0] txctrl0_in;
+input wire [127 : 0] txctrl1_in;
+input wire [63 : 0] txctrl2_in;
+input wire [1023 : 0] txdata_in;
+input wire [15 : 0] txdeemph_in;
+input wire [7 : 0] txdetectrx_in;
+input wire [39 : 0] txdiffctrl_in;
+input wire [7 : 0] txdlybypass_in;
+input wire [7 : 0] txdlyen_in;
+input wire [7 : 0] txdlyhold_in;
+input wire [7 : 0] txdlyovrden_in;
+input wire [7 : 0] txdlysreset_in;
+input wire [7 : 0] txdlyupdown_in;
+input wire [7 : 0] txelecidle_in;
+input wire [55 : 0] txmaincursor_in;
+input wire [23 : 0] txmargin_in;
+input wire [23 : 0] txoutclksel_in;
+input wire [7 : 0] txpcsreset_in;
+input wire [15 : 0] txpd_in;
+input wire [7 : 0] txpdelecidlemode_in;
+input wire [7 : 0] txphalign_in;
+input wire [7 : 0] txphalignen_in;
+input wire [7 : 0] txphdlypd_in;
+input wire [7 : 0] txphdlyreset_in;
+input wire [7 : 0] txphdlytstclk_in;
+input wire [7 : 0] txphinit_in;
+input wire [7 : 0] txphovrden_in;
+input wire [7 : 0] txpisopd_in;
+input wire [7 : 0] txpmareset_in;
+input wire [39 : 0] txpostcursor_in;
+input wire [7 : 0] txprbsforceerr_in;
+input wire [31 : 0] txprbssel_in;
+input wire [39 : 0] txprecursor_in;
+input wire [7 : 0] txprogdivreset_in;
+input wire [23 : 0] txrate_in;
+input wire [7 : 0] txswing_in;
+input wire [7 : 0] txsyncallin_in;
+input wire [7 : 0] txsyncin_in;
+input wire [7 : 0] txsyncmode_in;
+input wire [7 : 0] txuserrdy_in;
+input wire [7 : 0] txusrclk_in;
+input wire [7 : 0] txusrclk2_in;
+output wire [7 : 0] bufgtce_out;
+output wire [23 : 0] bufgtcemask_out;
+output wire [71 : 0] bufgtdiv_out;
+output wire [7 : 0] bufgtreset_out;
+output wire [23 : 0] bufgtrstmask_out;
+output wire [7 : 0] cplllock_out;
+output wire [127 : 0] dmonitorout_out;
+output wire [127 : 0] drpdo_out;
+output wire [7 : 0] drprdy_out;
+output wire [7 : 0] gtpowergood_out;
+output wire [7 : 0] gtytxn_out;
+output wire [7 : 0] gtytxp_out;
+output wire [7 : 0] pcierategen3_out;
+output wire [7 : 0] pcierateidle_out;
+output wire [15 : 0] pcierateqpllpd_out;
+output wire [15 : 0] pcierateqpllreset_out;
+output wire [7 : 0] pciesynctxsyncdone_out;
+output wire [7 : 0] pcieusergen3rdy_out;
+output wire [7 : 0] pcieuserphystatusrst_out;
+output wire [7 : 0] pcieuserratestart_out;
+output wire [7 : 0] phystatus_out;
+output wire [23 : 0] rxbufstatus_out;
+output wire [7 : 0] rxbyteisaligned_out;
+output wire [7 : 0] rxbyterealign_out;
+output wire [7 : 0] rxcdrlock_out;
+output wire [15 : 0] rxclkcorcnt_out;
+output wire [7 : 0] rxcommadet_out;
+output wire [127 : 0] rxctrl0_out;
+output wire [127 : 0] rxctrl1_out;
+output wire [63 : 0] rxctrl2_out;
+output wire [63 : 0] rxctrl3_out;
+output wire [1023 : 0] rxdata_out;
+output wire [7 : 0] rxdlysresetdone_out;
+output wire [7 : 0] rxelecidle_out;
+output wire [7 : 0] rxoutclk_out;
+output wire [7 : 0] rxoutclkfabric_out;
+output wire [7 : 0] rxoutclkpcs_out;
+output wire [7 : 0] rxphaligndone_out;
+output wire [7 : 0] rxpmaresetdone_out;
+output wire [7 : 0] rxprbserr_out;
+output wire [7 : 0] rxprbslocked_out;
+output wire [7 : 0] rxratedone_out;
+output wire [7 : 0] rxrecclkout_out;
+output wire [7 : 0] rxresetdone_out;
+output wire [23 : 0] rxstatus_out;
+output wire [7 : 0] rxsyncdone_out;
+output wire [7 : 0] rxvalid_out;
+output wire [7 : 0] txdlysresetdone_out;
+output wire [7 : 0] txoutclk_out;
+output wire [7 : 0] txoutclkfabric_out;
+output wire [7 : 0] txoutclkpcs_out;
+output wire [7 : 0] txphaligndone_out;
+output wire [7 : 0] txphinitdone_out;
+output wire [7 : 0] txpmaresetdone_out;
+output wire [7 : 0] txprgdivresetdone_out;
+output wire [7 : 0] txresetdone_out;
+output wire [7 : 0] txsyncdone_out;
+output wire [7 : 0] txsyncout_out;
 
   xdma_0_pcie4c_ip_gt_gtwizard_top #(
-    .C_CHANNEL_ENABLE(192'B000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+    .C_CHANNEL_ENABLE(192'B000000000000000000000000000000000000000000000000000000000000000000000000000000001111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
     .C_PCIE_ENABLE(1),
-    .C_PCIE_CORECLK_FREQ(250),
-    .C_COMMON_SCALING_FACTOR(1),
+    .C_PCIE_CORECLK_FREQ(500),
+    .C_COMMON_SCALING_FACTOR(2),
     .C_CPLL_VCO_FREQUENCY(2500.0),
     .C_FORCE_COMMONS(0),
     .C_FREERUN_FREQUENCY(100),
@@ -501,7 +501,7 @@ output wire [0 : 0] txsyncout_out;
     .C_RX_BUFFER_MODE(1),
     .C_RX_CB_DISP(8'B00000000),
     .C_RX_CB_K(8'B00000000),
-    .C_RX_CB_MAX_LEVEL(1),
+    .C_RX_CB_MAX_LEVEL(4),
     .C_RX_CB_LEN_SEQ(1),
     .C_RX_CB_NUM_SEQ(0),
     .C_RX_CB_VAL(80'B00000000000000000000000000000000000000000000000000000000000000000000000000000000),
@@ -539,8 +539,8 @@ output wire [0 : 0] txsyncout_out;
     .C_RX_USRCLK2_FREQUENCY(400.0000000),
     .C_SECONDARY_QPLL_ENABLE(0),
     .C_SECONDARY_QPLL_REFCLK_FREQUENCY(257.8125),
-    .C_TOTAL_NUM_CHANNELS(1),
-    .C_TOTAL_NUM_COMMONS(1),
+    .C_TOTAL_NUM_CHANNELS(8),
+    .C_TOTAL_NUM_COMMONS(2),
     .C_TOTAL_NUM_COMMONS_EXAMPLE(0),
     .C_TXPROGDIV_FREQ_ENABLE(0),
     .C_TXPROGDIV_FREQ_SOURCE(1),
@@ -595,101 +595,101 @@ output wire [0 : 0] txsyncout_out;
     .gtwiz_reset_rx_datapath_in(1'B0),
     .gtwiz_reset_tx_done_in(gtwiz_reset_tx_done_in),
     .gtwiz_reset_rx_done_in(gtwiz_reset_rx_done_in),
-    .gtwiz_reset_qpll0lock_in(1'B0),
-    .gtwiz_reset_qpll1lock_in(1'B0),
+    .gtwiz_reset_qpll0lock_in(2'B0),
+    .gtwiz_reset_qpll1lock_in(2'B0),
     .gtwiz_reset_rx_cdr_stable_out(),
     .gtwiz_reset_tx_done_out(),
     .gtwiz_reset_rx_done_out(),
     .gtwiz_reset_qpll0reset_out(),
     .gtwiz_reset_qpll1reset_out(),
-    .gtwiz_gthe3_cpll_cal_txoutclk_period_in(18'B0),
-    .gtwiz_gthe3_cpll_cal_cnt_tol_in(18'B0),
-    .gtwiz_gthe3_cpll_cal_bufg_ce_in(1'B0),
-    .gtwiz_gthe4_cpll_cal_txoutclk_period_in(18'B0),
-    .gtwiz_gthe4_cpll_cal_cnt_tol_in(18'B0),
-    .gtwiz_gthe4_cpll_cal_bufg_ce_in(1'B0),
+    .gtwiz_gthe3_cpll_cal_txoutclk_period_in(144'B0),
+    .gtwiz_gthe3_cpll_cal_cnt_tol_in(144'B0),
+    .gtwiz_gthe3_cpll_cal_bufg_ce_in(8'B0),
+    .gtwiz_gthe4_cpll_cal_txoutclk_period_in(144'B0),
+    .gtwiz_gthe4_cpll_cal_cnt_tol_in(144'B0),
+    .gtwiz_gthe4_cpll_cal_bufg_ce_in(8'B0),
     .gtwiz_gtye4_cpll_cal_txoutclk_period_in(gtwiz_gtye4_cpll_cal_txoutclk_period_in),
     .gtwiz_gtye4_cpll_cal_cnt_tol_in(gtwiz_gtye4_cpll_cal_cnt_tol_in),
     .gtwiz_gtye4_cpll_cal_bufg_ce_in(gtwiz_gtye4_cpll_cal_bufg_ce_in),
-    .gtwiz_userdata_tx_in(16'B0),
+    .gtwiz_userdata_tx_in(128'B0),
     .gtwiz_userdata_rx_out(),
-    .bgbypassb_in(1'H1),
-    .bgmonitorenb_in(1'H1),
-    .bgpdb_in(1'H1),
-    .bgrcalovrd_in(5'H10),
-    .bgrcalovrdenb_in(1'H1),
+    .bgbypassb_in(2'H3),
+    .bgmonitorenb_in(2'H3),
+    .bgpdb_in(2'H3),
+    .bgrcalovrd_in(10'H210),
+    .bgrcalovrdenb_in(2'H3),
     .drpaddr_common_in(drpaddr_common_in),
     .drpclk_common_in(drpclk_common_in),
     .drpdi_common_in(drpdi_common_in),
     .drpen_common_in(drpen_common_in),
     .drpwe_common_in(drpwe_common_in),
-    .gtgrefclk0_in(1'H0),
-    .gtgrefclk1_in(1'H0),
-    .gtnorthrefclk00_in(1'H0),
-    .gtnorthrefclk01_in(1'H0),
-    .gtnorthrefclk10_in(1'H0),
-    .gtnorthrefclk11_in(1'H0),
+    .gtgrefclk0_in(2'H0),
+    .gtgrefclk1_in(2'H0),
+    .gtnorthrefclk00_in(2'H0),
+    .gtnorthrefclk01_in(2'H0),
+    .gtnorthrefclk10_in(2'H0),
+    .gtnorthrefclk11_in(2'H0),
     .gtrefclk00_in(gtrefclk00_in),
     .gtrefclk01_in(gtrefclk01_in),
-    .gtrefclk10_in(1'H0),
-    .gtrefclk11_in(1'H0),
-    .gtsouthrefclk00_in(1'H0),
-    .gtsouthrefclk01_in(1'H0),
-    .gtsouthrefclk10_in(1'H0),
-    .gtsouthrefclk11_in(1'H0),
+    .gtrefclk10_in(2'H0),
+    .gtrefclk11_in(2'H0),
+    .gtsouthrefclk00_in(2'H0),
+    .gtsouthrefclk01_in(2'H0),
+    .gtsouthrefclk10_in(2'H0),
+    .gtsouthrefclk11_in(2'H0),
     .pcierateqpll0_in(pcierateqpll0_in),
     .pcierateqpll1_in(pcierateqpll1_in),
-    .pmarsvd0_in(8'H00),
-    .pmarsvd1_in(8'H00),
-    .qpll0clkrsvd0_in(1'H0),
-    .qpll0clkrsvd1_in(1'H0),
-    .qpll0fbdiv_in(8'H00),
-    .qpll0lockdetclk_in(1'H0),
-    .qpll0locken_in(1'H0),
+    .pmarsvd0_in(16'H0000),
+    .pmarsvd1_in(16'H0000),
+    .qpll0clkrsvd0_in(2'H0),
+    .qpll0clkrsvd1_in(2'H0),
+    .qpll0fbdiv_in(16'H0000),
+    .qpll0lockdetclk_in(2'H0),
+    .qpll0locken_in(2'H0),
     .qpll0pd_in(qpll0pd_in),
-    .qpll0refclksel_in(3'H1),
+    .qpll0refclksel_in(6'H09),
     .qpll0reset_in(qpll0reset_in),
-    .qpll1clkrsvd0_in(1'H0),
-    .qpll1clkrsvd1_in(1'H0),
-    .qpll1fbdiv_in(8'H00),
-    .qpll1lockdetclk_in(1'H0),
-    .qpll1locken_in(1'H1),
+    .qpll1clkrsvd0_in(2'H0),
+    .qpll1clkrsvd1_in(2'H0),
+    .qpll1fbdiv_in(16'H0000),
+    .qpll1lockdetclk_in(2'H0),
+    .qpll1locken_in(2'H3),
     .qpll1pd_in(qpll1pd_in),
-    .qpll1refclksel_in(3'H1),
+    .qpll1refclksel_in(6'H09),
     .qpll1reset_in(qpll1reset_in),
-    .qpllrsvd1_in(8'H00),
-    .qpllrsvd2_in(5'H00),
-    .qpllrsvd3_in(5'H00),
-    .qpllrsvd4_in(8'H00),
+    .qpllrsvd1_in(16'H0000),
+    .qpllrsvd2_in(10'H000),
+    .qpllrsvd3_in(10'H000),
+    .qpllrsvd4_in(16'H0000),
     .rcalenb_in(rcalenb_in),
-    .sdm0data_in(25'H0000000),
-    .sdm0reset_in(1'H0),
-    .sdm0toggle_in(1'H0),
-    .sdm0width_in(2'H0),
-    .sdm1data_in(25'H0000000),
-    .sdm1reset_in(1'H0),
-    .sdm1toggle_in(1'H0),
-    .sdm1width_in(2'H0),
+    .sdm0data_in(50'H0000000000000),
+    .sdm0reset_in(2'H0),
+    .sdm0toggle_in(2'H0),
+    .sdm0width_in(4'H0),
+    .sdm1data_in(50'H0000000000000),
+    .sdm1reset_in(2'H0),
+    .sdm1toggle_in(2'H0),
+    .sdm1width_in(4'H0),
     .tcongpi_in(1'B0),
     .tconpowerup_in(1'B0),
     .tconreset_in(1'B0),
     .tconrsvdin1_in(1'B0),
-    .ubcfgstreamen_in(1'H0),
-    .ubdo_in(16'H0000),
-    .ubdrdy_in(1'H0),
-    .ubenable_in(1'H0),
-    .ubgpi_in(2'H0),
-    .ubintr_in(2'H0),
-    .ubiolmbrst_in(1'H0),
-    .ubmbrst_in(1'H0),
-    .ubmdmcapture_in(1'H0),
-    .ubmdmdbgrst_in(1'H0),
-    .ubmdmdbgupdate_in(1'H0),
-    .ubmdmregen_in(4'H0),
-    .ubmdmshift_in(1'H0),
-    .ubmdmsysrst_in(1'H0),
-    .ubmdmtck_in(1'H0),
-    .ubmdmtdi_in(1'H0),
+    .ubcfgstreamen_in(2'H0),
+    .ubdo_in(32'H00000000),
+    .ubdrdy_in(2'H0),
+    .ubenable_in(2'H0),
+    .ubgpi_in(4'H0),
+    .ubintr_in(4'H0),
+    .ubiolmbrst_in(2'H0),
+    .ubmbrst_in(2'H0),
+    .ubmdmcapture_in(2'H0),
+    .ubmdmdbgrst_in(2'H0),
+    .ubmdmdbgupdate_in(2'H0),
+    .ubmdmregen_in(8'H00),
+    .ubmdmshift_in(2'H0),
+    .ubmdmsysrst_in(2'H0),
+    .ubmdmtck_in(2'H0),
+    .ubmdmtdi_in(2'H0),
     .drpdo_common_out(drpdo_common_out),
     .drprdy_common_out(drprdy_common_out),
     .pmarsvdout0_out(),
@@ -725,17 +725,17 @@ output wire [0 : 0] txsyncout_out;
     .ubmdmtdo_out(),
     .ubrsvdout_out(),
     .ubtxuart_out(),
-    .cdrstepdir_in(1'H0),
-    .cdrstepsq_in(1'H0),
-    .cdrstepsx_in(1'H0),
-    .cfgreset_in(1'H0),
-    .clkrsvd0_in(1'H0),
-    .clkrsvd1_in(1'H0),
+    .cdrstepdir_in(8'H00),
+    .cdrstepsq_in(8'H00),
+    .cdrstepsx_in(8'H00),
+    .cfgreset_in(8'H00),
+    .clkrsvd0_in(8'H00),
+    .clkrsvd1_in(8'H00),
     .cpllfreqlock_in(cpllfreqlock_in),
-    .cplllockdetclk_in(1'H0),
-    .cplllocken_in(1'H1),
+    .cplllockdetclk_in(8'H00),
+    .cplllocken_in(8'HFF),
     .cpllpd_in(cpllpd_in),
-    .cpllrefclksel_in(3'H1),
+    .cpllrefclksel_in(24'H249249),
     .cpllreset_in(cpllreset_in),
     .dmonfiforeset_in(dmonfiforeset_in),
     .dmonitorclk_in(dmonitorclk_in),
@@ -755,24 +755,24 @@ output wire [0 : 0] txsyncout_out;
     .evoddphixwren_in(1'B0),
     .eyescanmode_in(1'B0),
     .eyescanreset_in(eyescanreset_in),
-    .eyescantrigger_in(1'H0),
-    .freqos_in(1'H0),
-    .gtgrefclk_in(1'H0),
+    .eyescantrigger_in(8'H00),
+    .freqos_in(8'H00),
+    .gtgrefclk_in(8'H00),
     .gthrxn_in(1'B0),
     .gthrxp_in(1'B0),
-    .gtnorthrefclk0_in(1'H0),
-    .gtnorthrefclk1_in(1'H0),
+    .gtnorthrefclk0_in(8'H00),
+    .gtnorthrefclk1_in(8'H00),
     .gtrefclk0_in(gtrefclk0_in),
-    .gtrefclk1_in(1'H0),
+    .gtrefclk1_in(8'H00),
     .gtresetsel_in(1'B0),
-    .gtrsvd_in(16'H0000),
+    .gtrsvd_in(128'H00000000000000000000000000000000),
     .gtrxreset_in(gtrxreset_in),
-    .gtrxresetsel_in(1'H0),
-    .gtsouthrefclk0_in(1'H0),
-    .gtsouthrefclk1_in(1'H0),
+    .gtrxresetsel_in(8'H00),
+    .gtsouthrefclk0_in(8'H00),
+    .gtsouthrefclk1_in(8'H00),
     .gttxreset_in(gttxreset_in),
-    .gttxresetsel_in(1'H0),
-    .incpctrl_in(1'H0),
+    .gttxresetsel_in(8'H00),
+    .incpctrl_in(8'H00),
     .gtyrxn_in(gtyrxn_in),
     .gtyrxp_in(gtyrxp_in),
     .loopback_in(loopback_in),
@@ -783,102 +783,102 @@ output wire [0 : 0] txsyncout_out;
     .pcierstidle_in(pcierstidle_in),
     .pciersttxsyncstart_in(pciersttxsyncstart_in),
     .pcieuserratedone_in(pcieuserratedone_in),
-    .pcsrsvdin_in(16'H0000),
+    .pcsrsvdin_in(128'H00000000000000000000000000000000),
     .pcsrsvdin2_in(1'B0),
     .pmarsvdin_in(1'B0),
-    .qpll0clk_in(1'H0),
+    .qpll0clk_in(8'H00),
     .qpll0freqlock_in(qpll0freqlock_in),
-    .qpll0refclk_in(1'H0),
-    .qpll1clk_in(1'H0),
+    .qpll0refclk_in(8'H00),
+    .qpll1clk_in(8'H00),
     .qpll1freqlock_in(qpll1freqlock_in),
-    .qpll1refclk_in(1'H0),
+    .qpll1refclk_in(8'H00),
     .resetovrd_in(resetovrd_in),
     .rstclkentx_in(1'B0),
     .rx8b10ben_in(rx8b10ben_in),
-    .rxafecfoken_in(1'H1),
+    .rxafecfoken_in(8'HFF),
     .rxbufreset_in(rxbufreset_in),
     .rxcdrfreqreset_in(rxcdrfreqreset_in),
     .rxcdrhold_in(rxcdrhold_in),
-    .rxcdrovrden_in(1'H0),
+    .rxcdrovrden_in(8'H00),
     .rxcdrreset_in(rxcdrreset_in),
     .rxcdrresetrsv_in(1'B0),
-    .rxchbonden_in(1'H0),
-    .rxchbondi_in(5'H00),
-    .rxchbondlevel_in(3'H0),
-    .rxchbondmaster_in(1'H0),
-    .rxchbondslave_in(1'H0),
-    .rxckcalreset_in(1'H0),
-    .rxckcalstart_in(7'H00),
+    .rxchbonden_in(8'H00),
+    .rxchbondi_in(40'H0000000000),
+    .rxchbondlevel_in(24'H000000),
+    .rxchbondmaster_in(8'H00),
+    .rxchbondslave_in(8'H00),
+    .rxckcalreset_in(8'H00),
+    .rxckcalstart_in(56'H00000000000000),
     .rxcommadeten_in(rxcommadeten_in),
     .rxdfeagcctrl_in(1'B0),
     .rxdccforcestart_in(1'B0),
     .rxdfeagchold_in(rxdfeagchold_in),
-    .rxdfeagcovrden_in(1'H0),
-    .rxdfecfokfcnum_in(4'HD),
-    .rxdfecfokfen_in(1'H0),
-    .rxdfecfokfpulse_in(1'H0),
+    .rxdfeagcovrden_in(8'H00),
+    .rxdfecfokfcnum_in(32'HDDDDDDDD),
+    .rxdfecfokfen_in(8'H00),
+    .rxdfecfokfpulse_in(8'H00),
     .rxdfecfokhold_in(rxdfecfokhold_in),
-    .rxdfecfokovren_in(1'H0),
+    .rxdfecfokovren_in(8'H00),
     .rxdfekhhold_in(rxdfekhhold_in),
-    .rxdfekhovrden_in(1'H0),
+    .rxdfekhovrden_in(8'H00),
     .rxdfelfhold_in(rxdfelfhold_in),
-    .rxdfelfovrden_in(1'H0),
+    .rxdfelfovrden_in(8'H00),
     .rxdfelpmreset_in(rxdfelpmreset_in),
     .rxdfetap10hold_in(rxdfetap10hold_in),
-    .rxdfetap10ovrden_in(1'H0),
+    .rxdfetap10ovrden_in(8'H00),
     .rxdfetap11hold_in(rxdfetap11hold_in),
-    .rxdfetap11ovrden_in(1'H0),
+    .rxdfetap11ovrden_in(8'H00),
     .rxdfetap12hold_in(rxdfetap12hold_in),
-    .rxdfetap12ovrden_in(1'H0),
+    .rxdfetap12ovrden_in(8'H00),
     .rxdfetap13hold_in(rxdfetap13hold_in),
-    .rxdfetap13ovrden_in(1'H0),
+    .rxdfetap13ovrden_in(8'H00),
     .rxdfetap14hold_in(rxdfetap14hold_in),
-    .rxdfetap14ovrden_in(1'H0),
+    .rxdfetap14ovrden_in(8'H00),
     .rxdfetap15hold_in(rxdfetap15hold_in),
-    .rxdfetap15ovrden_in(1'H0),
+    .rxdfetap15ovrden_in(8'H00),
     .rxdfetap2hold_in(rxdfetap2hold_in),
-    .rxdfetap2ovrden_in(1'H0),
+    .rxdfetap2ovrden_in(8'H00),
     .rxdfetap3hold_in(rxdfetap3hold_in),
-    .rxdfetap3ovrden_in(1'H0),
+    .rxdfetap3ovrden_in(8'H00),
     .rxdfetap4hold_in(rxdfetap4hold_in),
-    .rxdfetap4ovrden_in(1'H0),
+    .rxdfetap4ovrden_in(8'H00),
     .rxdfetap5hold_in(rxdfetap5hold_in),
-    .rxdfetap5ovrden_in(1'H0),
+    .rxdfetap5ovrden_in(8'H00),
     .rxdfetap6hold_in(rxdfetap6hold_in),
-    .rxdfetap6ovrden_in(1'H0),
+    .rxdfetap6ovrden_in(8'H00),
     .rxdfetap7hold_in(rxdfetap7hold_in),
-    .rxdfetap7ovrden_in(1'H0),
+    .rxdfetap7ovrden_in(8'H00),
     .rxdfetap8hold_in(rxdfetap8hold_in),
-    .rxdfetap8ovrden_in(1'H0),
+    .rxdfetap8ovrden_in(8'H00),
     .rxdfetap9hold_in(rxdfetap9hold_in),
-    .rxdfetap9ovrden_in(1'H0),
+    .rxdfetap9ovrden_in(8'H00),
     .rxdfeuthold_in(rxdfeuthold_in),
-    .rxdfeutovrden_in(1'H0),
+    .rxdfeutovrden_in(8'H00),
     .rxdfevphold_in(rxdfevphold_in),
-    .rxdfevpovrden_in(1'H0),
+    .rxdfevpovrden_in(8'H00),
     .rxdfevsen_in(1'B0),
-    .rxdfexyden_in(1'H1),
-    .rxdlybypass_in(1'H1),
-    .rxdlyen_in(1'H0),
-    .rxdlyovrden_in(1'H0),
-    .rxdlysreset_in(1'H0),
-    .rxelecidlemode_in(2'H0),
-    .rxeqtraining_in(1'H0),
-    .rxgearboxslip_in(1'H0),
-    .rxlatclk_in(1'H0),
+    .rxdfexyden_in(8'HFF),
+    .rxdlybypass_in(8'HFF),
+    .rxdlyen_in(8'H00),
+    .rxdlyovrden_in(8'H00),
+    .rxdlysreset_in(8'H00),
+    .rxelecidlemode_in(16'H0000),
+    .rxeqtraining_in(8'H00),
+    .rxgearboxslip_in(8'H00),
+    .rxlatclk_in(8'H00),
     .rxlpmen_in(rxlpmen_in),
     .rxlpmgchold_in(rxlpmgchold_in),
-    .rxlpmgcovrden_in(1'H0),
+    .rxlpmgcovrden_in(8'H00),
     .rxlpmhfhold_in(rxlpmhfhold_in),
-    .rxlpmhfovrden_in(1'H0),
+    .rxlpmhfovrden_in(8'H00),
     .rxlpmlfhold_in(rxlpmlfhold_in),
-    .rxlpmlfklovrden_in(1'H0),
+    .rxlpmlfklovrden_in(8'H00),
     .rxlpmoshold_in(rxlpmoshold_in),
-    .rxlpmosovrden_in(1'H0),
+    .rxlpmosovrden_in(8'H00),
     .rxmcommaalignen_in(rxmcommaalignen_in),
-    .rxmonitorsel_in(2'H0),
-    .rxoobreset_in(1'H0),
-    .rxoscalreset_in(1'H0),
+    .rxmonitorsel_in(16'H0000),
+    .rxoobreset_in(8'H00),
+    .rxoscalreset_in(8'H00),
     .rxoshold_in(rxoshold_in),
     .rxosintcfg_in(1'B0),
     .rxosinten_in(1'B0),
@@ -886,17 +886,17 @@ output wire [0 : 0] txsyncout_out;
     .rxosintovrden_in(1'B0),
     .rxosintstrobe_in(1'B0),
     .rxosinttestovrden_in(1'B0),
-    .rxosovrden_in(1'H0),
-    .rxoutclksel_in(3'H2),
+    .rxosovrden_in(8'H00),
+    .rxoutclksel_in(24'H492492),
     .rxpcommaalignen_in(rxpcommaalignen_in),
     .rxpcsreset_in(rxpcsreset_in),
     .rxpd_in(rxpd_in),
-    .rxphalign_in(1'H0),
-    .rxphalignen_in(1'H0),
-    .rxphdlypd_in(1'H0),
-    .rxphdlyreset_in(1'H0),
+    .rxphalign_in(8'H00),
+    .rxphalignen_in(8'H00),
+    .rxphdlypd_in(8'H00),
+    .rxphdlyreset_in(8'H00),
     .rxphovrden_in(1'B0),
-    .rxpllclksel_in(2'H2),
+    .rxpllclksel_in(16'HAAAA),
     .rxpmareset_in(rxpmareset_in),
     .rxpolarity_in(rxpolarity_in),
     .rxprbscntreset_in(rxprbscntreset_in),
@@ -906,31 +906,31 @@ output wire [0 : 0] txsyncout_out;
     .rxrate_in(rxrate_in),
     .rxratemode_in(rxratemode_in),
     .rxslide_in(rxslide_in),
-    .rxslipoutclk_in(1'H0),
-    .rxslippma_in(1'H0),
-    .rxsyncallin_in(1'H0),
-    .rxsyncin_in(1'H0),
-    .rxsyncmode_in(1'H0),
-    .rxsysclksel_in(2'H3),
+    .rxslipoutclk_in(8'H00),
+    .rxslippma_in(8'H00),
+    .rxsyncallin_in(8'H00),
+    .rxsyncin_in(8'H00),
+    .rxsyncmode_in(8'H00),
+    .rxsysclksel_in(16'HFFFF),
     .rxtermination_in(rxtermination_in),
     .rxuserrdy_in(rxuserrdy_in),
     .rxusrclk_in(rxusrclk_in),
     .rxusrclk2_in(rxusrclk2_in),
-    .sigvalidclk_in(1'H0),
-    .tstin_in(20'H00000),
-    .tx8b10bbypass_in(8'H00),
+    .sigvalidclk_in(8'H00),
+    .tstin_in(160'H0000000000000000000000000000000000000000),
+    .tx8b10bbypass_in(64'H0000000000000000),
     .tx8b10ben_in(tx8b10ben_in),
     .txbufdiffctrl_in(1'B0),
-    .txcominit_in(1'H0),
-    .txcomsas_in(1'H0),
-    .txcomwake_in(1'H0),
+    .txcominit_in(8'H00),
+    .txcomsas_in(8'H00),
+    .txcomwake_in(8'H00),
     .txctrl0_in(txctrl0_in),
     .txctrl1_in(txctrl1_in),
     .txctrl2_in(txctrl2_in),
     .txdata_in(txdata_in),
-    .txdataextendrsvd_in(8'H00),
-    .txdccforcestart_in(1'H0),
-    .txdccreset_in(1'H0),
+    .txdataextendrsvd_in(64'H0000000000000000),
+    .txdccforcestart_in(8'H00),
+    .txdccreset_in(8'H00),
     .txdeemph_in(txdeemph_in),
     .txdetectrx_in(txdetectrx_in),
     .txdiffctrl_in(txdiffctrl_in),
@@ -943,17 +943,17 @@ output wire [0 : 0] txsyncout_out;
     .txdlyupdown_in(txdlyupdown_in),
     .txelecidle_in(txelecidle_in),
     .txelforcestart_in(1'B0),
-    .txheader_in(6'H00),
-    .txinhibit_in(1'H0),
-    .txlatclk_in(1'H0),
-    .txlfpstreset_in(1'H0),
-    .txlfpsu2lpexit_in(1'H0),
-    .txlfpsu3wake_in(1'H0),
+    .txheader_in(48'H000000000000),
+    .txinhibit_in(8'H00),
+    .txlatclk_in(8'H00),
+    .txlfpstreset_in(8'H00),
+    .txlfpsu2lpexit_in(8'H00),
+    .txlfpsu3wake_in(8'H00),
     .txmaincursor_in(txmaincursor_in),
     .txmargin_in(txmargin_in),
-    .txmuxdcdexhold_in(1'H0),
-    .txmuxdcdorwren_in(1'H0),
-    .txoneszeros_in(1'H0),
+    .txmuxdcdexhold_in(8'H00),
+    .txmuxdcdorwren_in(8'H00),
+    .txoneszeros_in(8'H00),
     .txoutclksel_in(txoutclksel_in),
     .txpcsreset_in(txpcsreset_in),
     .txpd_in(txpd_in),
@@ -965,15 +965,15 @@ output wire [0 : 0] txsyncout_out;
     .txphdlytstclk_in(txphdlytstclk_in),
     .txphinit_in(txphinit_in),
     .txphovrden_in(txphovrden_in),
-    .txpippmen_in(1'H0),
-    .txpippmovrden_in(1'H0),
-    .txpippmpd_in(1'H1),
-    .txpippmsel_in(1'H0),
-    .txpippmstepsize_in(5'H00),
+    .txpippmen_in(8'H00),
+    .txpippmovrden_in(8'H00),
+    .txpippmpd_in(8'HFF),
+    .txpippmsel_in(8'H00),
+    .txpippmstepsize_in(40'H0000000000),
     .txpisopd_in(txpisopd_in),
-    .txpllclksel_in(2'H2),
+    .txpllclksel_in(16'HAAAA),
     .txpmareset_in(txpmareset_in),
-    .txpolarity_in(1'H0),
+    .txpolarity_in(8'H00),
     .txpostcursor_in(txpostcursor_in),
     .txpostcursorinv_in(1'B0),
     .txprbsforceerr_in(txprbsforceerr_in),
@@ -985,13 +985,13 @@ output wire [0 : 0] txsyncout_out;
     .txqpistrongpdown_in(1'B0),
     .txqpiweakpup_in(1'B0),
     .txrate_in(txrate_in),
-    .txratemode_in(1'H0),
-    .txsequence_in(7'H00),
+    .txratemode_in(8'H00),
+    .txsequence_in(56'H00000000000000),
     .txswing_in(txswing_in),
     .txsyncallin_in(txsyncallin_in),
     .txsyncin_in(txsyncin_in),
     .txsyncmode_in(txsyncmode_in),
-    .txsysclksel_in(2'H3),
+    .txsysclksel_in(16'HFFFF),
     .txuserrdy_in(txuserrdy_in),
     .txusrclk_in(txusrclk_in),
     .txusrclk2_in(txusrclk2_in),

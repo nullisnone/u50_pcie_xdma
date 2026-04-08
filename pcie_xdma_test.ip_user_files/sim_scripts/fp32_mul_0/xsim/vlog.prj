@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../pcie_xdma_test.gen/sources_1/ip/fp32_mul_0/sim/fp32_mul_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

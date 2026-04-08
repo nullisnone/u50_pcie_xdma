@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="fp32_add_0_synth_1" LaunchPart="xcu50-fsvh2104-2-e" LaunchTime="1775560989">
+  <File Type="RDS-DCP" Name="fp32_add_0.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="fp32_add_0_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="fp32_add_0.tcl"/>
+  <File Type="RDS-UTIL" Name="fp32_add_0_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="fp32_add_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="fp32_add_0.vds"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fp32_add_0">
+    <File Path="$PSRCDIR/sources_1/ip/fp32_add_0/fp32_add_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="fp32_add_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fp32_add_0">
+    <File Path="$PSRCDIR/sources_1/ip/fp32_add_0/fp32_add_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="fp32_add_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
