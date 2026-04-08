@@ -1,0 +1,21 @@
+# Vivado build artifacts (typically > 100MB)
+*.dcp
+*.mcs
+*.bit
+*.bin
+*.prm
+
+# Vivado generated directories
+.Xil/
+*.runs/
+*.cache/
+*.sim/
+*.hw/
+*.ip_user_files/
+
+# Vivado logs and temporary files
+*.jou
+*.log
+*.pb
+*.str
+*.backup.log
